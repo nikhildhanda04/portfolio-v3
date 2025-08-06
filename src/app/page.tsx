@@ -1,5 +1,7 @@
 import Navbar from "./components/common/navbar";
 import Hero from "./components/landingpage/hero";
+import Projects from "./components/landingpage/projects";
+import {projects} from "./components/landingpage/projectData";
 import Experience from "./components/landingpage/experience";
 import Footer from "./components/common/footer";
 
@@ -13,6 +15,9 @@ export default function Home() {
       </div>
       <div>
         <Hero />
+      </div>
+      <div>
+        <Projects projects={projects} />
       </div>
       <div>
         <Experience />
