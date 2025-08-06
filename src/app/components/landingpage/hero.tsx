@@ -4,7 +4,7 @@ import Image from 'next/image'
 export default function Hero(){
     return(
         <>
-        <div className="flex flex-col px-32 gap-20">
+        <div className="flex flex-col px-32 py-12 gap-20 border border-stone-300">
 
             <div className="flex flex-row gap-8 items-end">
 
@@ -19,7 +19,7 @@ export default function Hero(){
                 </div>
                 
                 <div className="flex flex-col gap-2 py-8">
-                    <div className="font-primary text-3xl font-medium text-stone-800">
+                    <div className="font-primary text-3xl font-medium text-stone-800 dark:text-stone-300">
                         Nikhil Dhanda
                     </div>
                     <div className="font-primary text-stone-500">
@@ -27,17 +27,17 @@ export default function Hero(){
                     </div>
                     <div className="flex flex-row mt-4 gap-2">
                         <a 
-                        className="p-3 border border-neutral-400 rounded-full hover:shadow-[0px_3px_15px_rgba(0,0,0,0.2)] transition-all duration-150 ease-in"
+                        className="p-3 text-stone-800 dark:text-stone-300 border border-neutral-400 rounded-full hover:shadow-[0px_3px_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0px_3px_25px_rgba(255,255,255,0.2)] transition-all duration-150 ease-in"
                         href="">
                             <Linkedin />
                         </a>
                         <a 
-                        className="p-3 border border-neutral-400 rounded-full hover:shadow-[0px_3px_15px_rgba(0,0,0,0.2)] transition-all duration-150 ease-in"
+                        className="p-3 text-stone-800 dark:text-stone-300 border border-neutral-400 rounded-full hover:shadow-[0px_3px_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0px_3px_25px_rgba(255,255,255,0.2)] transition-all duration-150 ease-in"
                         href="">
                             <Github />
                         </a>
                         <a 
-                        className="p-3 border border-neutral-400 rounded-full hover:shadow-[0px_3px_15px_rgba(0,0,0,0.2)] transition-all duration-150 ease-in"
+                        className="p-3 text-stone-800 dark:text-stone-300 border border-neutral-400 rounded-full hover:shadow-[0px_3px_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0px_3px_25px_rgba(255,255,255,0.2)] transition-all duration-150 ease-in"
                         href="">
                             <Instagram />
                         </a>
@@ -47,19 +47,19 @@ export default function Hero(){
 
             </div>
 
-            <div className="flex flex-col items-start gap-8">
+            <div className="flex flex-col items-start gap-8 ">
 
-            <div className="font-secondary tracking-wide" > 
-                Hey! This is Nikhil Dhanda -- a design engineer focused on creating high performance, user centric, engaging web applications. <br />
-                Having a experience of over a year, and catering to a industry that I am passionate about, I like building flows that capture audience and look and feel highly professional.<br /> 
+            <div className="font-secondary tracking-wide text-stone-800 dark:text-stone-300" > 
+                Hey! This is <span className="font-bold">Nikhil Dhanda</span> -- a design engineer focused on creating high performance, user centric, engaging web applications. <br />
+                Having a experience of over a year, and catering to a industry that I am passionate about, I like <span className="font-bold">building flows that capture audience</span> and look and feel highly <span className="font-bold">professional</span>.<br /> 
                 Apart from this I dont do anything, majority of my day goes by learning and doing, cause that is what I love. <br />
-                Let’s connect and collaborate.
+                Let’s <span className="font-bold">connect and collaborate</span>.
             </div>
 
             <a 
             href=""
             download
-            className="px-7 py-4 flex flex-row gap-3 bg-stone-800 text-light rounded-xl hover:shadow-[0px_6px_20px_rgba(0,0,0,0.3)] transition-all duration-200 ease-in">
+            className="px-7 py-4 flex flex-row gap-3 bg-stone-800 dark:bg-stone-300 text-light dark:text-dark rounded-xl hover:shadow-[0px_6px_20px_rgba(0,0,0,0.3)] dark:hover:shadow-[0px_3px_25px_rgba(255,255,255,0.2)] transition-all duration-200 ease-in">
                 Resume <Download />
             </a>
 

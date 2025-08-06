@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${imb_plex_mono.variable} ${poltawaski_noway.variable} ${poppins.variable} antialiased`}
+        className={`${imb_plex_mono.variable} ${poltawaski_noway.variable} ${poppins.variable} antialiased bg-light dark:bg-dark`}
       >
         {children}
       </body>

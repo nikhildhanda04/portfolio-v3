@@ -3,19 +3,19 @@ import { Mail, Phone} from 'lucide-react'
 export default function Footer() {
     return(
         <>
-        <div className="flex flex-col ">
+        <div className="flex flex-col px-28 pt-12 mask-b-from-70% border border-stone-300">
 
-            <div className="flex flex-col gap-8 px-28">
+            <div className="flex flex-col gap-8 px-3 ">
 
-                <div className='font-secondary font-bold text-3xl'>
+                <div className='font-secondary font-bold text-3xl text-zinc-800 dark:text-zinc-300'>
                     Reach Out:
                 </div>
                 <div className="flex flex-col gap-3">
 
-                    <div className="flex flex-row gap-5 text-secondary text-lg hover:underline hover:italic tranistion-all duration-200 ease-in">
+                    <div className="flex flex-row gap-5 text-secondary text-zinc-800 dark:text-zinc-300 text-lg hover:underline hover:italic tranistion-all duration-200 ease-in">
                        <Mail/> nikhildhanda84@gmail.com
                     </div>
-                    <div className="flex flex-row gap-5  text-secondary text-lg hover:underline hover:italic tranistion-all duration-200 ease-in">
+                    <div className="flex flex-row gap-5  text-secondary text-zinc-800 dark:text-zinc-300 text-lg hover:underline hover:italic tranistion-all duration-200 ease-in">
                        <Phone/> +91 9215593793
                     </div>
 
@@ -23,7 +23,7 @@ export default function Footer() {
 
             </div>
 
-            <div className='font-[poltawaski] font-bold text-[9.4vw] text-center -mb-[90vw]'>
+            <div className='font-[poltawaski] font-bold text-8xl mt-6 -mb-10 text-zinc-800 dark:text-zinc-300 tracking-wider relative text-center '>
                 NIKHIL DHANDA
             </div>
 

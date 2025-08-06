@@ -1,22 +1,22 @@
 export default function Experience() {
     return(
         <>
-        <div className="flex flex-col gap-20 py-12 px-32">
+        <div className="flex flex-col gap-20 py-12 px-32 border border-stone-300">
 
-            <div className="font-primary font-medium text-3xl">
-                Experience -------
+            <div className="font-primary font-medium text-3xl text-stone-800 dark:text-stone-300">
+                Experience 
             </div>
 
             <div className="flex flex-col gap-16">
 
-                <div className="flex flex-col gap-6 font-primary tracking-tight">
+                <div className="flex flex-col gap-6 font-primary tracking-tight border border-stone-300 px-6 py-4">
 
                     <div className="flex flex-col gap-1">
                     <div className="flex flex-row">
                         <div>
 
                         </div>
-                        <div className="text-3xl font-medium text-zinc-800">
+                        <div className="text-3xl font-medium text-zinc-800 dark:text-zinc-300">
                             Oscode
                         </div>
                     </div>
@@ -34,14 +34,14 @@ export default function Experience() {
 
                 </div>
 
-                <div className="flex flex-col gap-6 font-primary tracking-tight">
+                <div className="flex flex-col gap-6 font-primary tracking-tight border border-stone-300 px-6 py-4">
 
                     <div className="flex flex-col gap-1">
                     <div className="flex flex-row">
                         <div>
                             
                         </div>
-                        <div className="text-3xl font-medium text-zinc-800">
+                        <div className="text-3xl font-medium text-zinc-800 dark:text-zinc-300">
                             WebscraftMedia
                         </div>
                     </div>
