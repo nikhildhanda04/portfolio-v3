@@ -1,11 +1,27 @@
 @import "tailwindcss";
 
+@font-face{
+  font-family: 'plex';
+  src: url("/fonts/IBMPlexMono-Regular.ttf") format('truetype');
+  font-style: normal;
+  font-display: swap;
+} 
+
+@font-face{
+  font-family: 'poltawaski';
+  src: url("/fonts/PoltawskiNowy-VariableFont_wght.ttf") format('truetype');
+  font-style: normal;
+  font-display: swap;
+} 
+
+
+
 @theme{
   --color-light: #FAF9F6;
   --color-dark: #09090B;
-  --font-logo: "poltawski";
-  --font-primary: "poppins";
-  --font-secondary: "plex";
+  --font-logo: "poltawaski". sans-serif;
+  --font-primary: "Poppins";
+  --font-secondary: "plex", sans-serif;
 }
 
 

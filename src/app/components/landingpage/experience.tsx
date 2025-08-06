@@ -1,0 +1,71 @@
+export default function Experience() {
+    return(
+        <>
+        <div className="flex flex-col gap-20 py-12 px-32">
+
+            <div className="font-primary font-medium text-3xl">
+                Experience -------
+            </div>
+
+            <div className="flex flex-col gap-16">
+
+                <div className="flex flex-col gap-6 font-primary tracking-tight">
+
+                    <div className="flex flex-col gap-1">
+                    <div className="flex flex-row">
+                        <div>
+
+                        </div>
+                        <div className="text-3xl font-medium text-zinc-800">
+                            Oscode
+                        </div>
+                    </div>
+
+                    <div className="text-xl text-stone-700">
+                        Full Stack Web Intern <span className="text-sm">(Oct 2024 - May 2025)</span>
+                    </div>
+                    </div>
+
+                    <div className="font-secondary text-stone-500">
+                        <li className="">Designed and developed effective web solutions, delivering high-quality services to meet client requirements.</li>
+                        <li className="mt-2">Collaborated in cross-functional teams and participated in client meetings to ensure alignment with user needs and adherence to project deadlines.</li>
+                        <li className="mt-2">Worked closely with teams and attended client meetings to facilitate seamless project execution and client satisfaction.</li>
+                    </div>
+
+                </div>
+
+                <div className="flex flex-col gap-6 font-primary tracking-tight">
+
+                    <div className="flex flex-col gap-1">
+                    <div className="flex flex-row">
+                        <div>
+                            
+                        </div>
+                        <div className="text-3xl font-medium text-zinc-800">
+                            WebscraftMedia
+                        </div>
+                    </div>
+
+                    <div className="text-xl text-stone-700">
+                        Front-end Stack Intern <span className="text-sm">(Aug 2024 – Oct 2025)</span>
+                    </div>
+                    </div>
+
+                    <div className="font-secondary text-stone-500">
+                        <li className="">Supported maintenance of 5+ websites, ensuring 100% uptime.</li>
+                        <li className="mt-2">Learned working in a time bound environment and meeting my deadlines on time. </li>
+                        <li className="mt-2">Gained experience on technologies like React, Tailwind, and Typescript.</li>
+                        <li className="mt-2">Learned about how a corporate startup works.</li>
+                    </div>
+
+                </div>
+
+                
+
+                
+            </div>
+
+        </div>
+        </>
+    )
+}
