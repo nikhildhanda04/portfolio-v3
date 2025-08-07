@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Moon, Sun } from 'lucide-react';
+import { motion,easeIn } from 'framer-motion'
 
 const sections = ["hero", "projects", "experience"];
 
@@ -64,7 +65,11 @@ export default function Navbar() {
     }, []);
 
     return (
-        <div className="flex border-t border-b border-r border-stone-300 flex-row fixed w-6xl z-50 justify-between px-6  md:px-24 py-6 items-center backdrop-blur-xl bg-white/30 dark:bg-black/30">
+        <motion.div 
+        initial={{y: -20, filter: "blur(10px)"}}
+        whileInView={{y:0, filter: "blur(0px)"}}
+        transition={{duration: 0.4, ease: easeIn}}
+        className="flex border-t border-b border-r border-stone-300 flex-row fixed w-6xl z-50 justify-between px-6  md:px-24 py-6 items-center backdrop-blur-xl bg-white/30 dark:bg-black/30">
             <a
             href="#hero"
             onClick={(e) => {
@@ -107,6 +112,6 @@ export default function Navbar() {
                     )}
                 </button>
             </div>
-        </div>
+        </motion.div>
     );
 }

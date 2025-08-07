@@ -1,17 +1,28 @@
+'use client'
+
 import Image from 'next/image'
+import { motion, easeIn} from 'framer-motion'
 
 export default function Experience() {
     return(
         <>
         <div className="flex flex-col gap-20 py-12 px-6 md:px-32 border-t border-b border-stone-300">
 
-            <div className="font-primary font-medium text-3xl text-stone-800 dark:text-stone-300">
+            <motion.div 
+                initial={{y: -20, filter: "blur(10px)"}}
+                whileInView={{y:0, filter: "blur(0px)"}}
+                transition={{duration: 0.4, ease: easeIn}}
+            className="font-primary font-medium text-3xl text-stone-800 dark:text-stone-300">
                 Experience 
-            </div>
+            </motion.div>
 
             <div className="flex flex-col gap-16">
 
-                <div className="flex flex-col gap-6 font-primary tracking-tight border border-stone-300  pl-9 py-7">
+                <motion.div 
+                initial={{y: -20, filter: "blur(10px)"}}
+                whileInView={{y:0, filter: "blur(0px)"}}
+                transition={{duration: 0.4, ease: easeIn}}
+                className="flex flex-col gap-6 font-primary tracking-tight border border-stone-300  pl-9 py-7">
 
                     <div className="flex flex-col gap-1">
                     <div className="flex flex-row items-center gap-3">
@@ -39,9 +50,13 @@ export default function Experience() {
                         <li className="mt-2">Worked closely with teams and attended client meetings to facilitate seamless project execution and client satisfaction.</li>
                     </div>
 
-                </div>
+                </motion.div>
 
-                <div className="flex flex-col gap-6 font-primary tracking-tight border border-stone-300 pl-9 py-7">
+                <motion.div 
+                initial={{y: -20, filter: "blur(10px)"}}
+                whileInView={{y:0, filter: "blur(0px)"}}
+                transition={{duration: 0.6, ease: easeIn}}
+                className="flex flex-col gap-6 font-primary tracking-tight border border-stone-300 pl-9 py-7">
 
                     <div className="flex flex-col gap-1">
                     <div className="flex flex-row items-center gap-3">
@@ -71,7 +86,7 @@ export default function Experience() {
                         <li className="mt-2">Learned about how a corporate startup works.</li>
                     </div>
 
-                </div>
+                </motion.div>
 
                 
 

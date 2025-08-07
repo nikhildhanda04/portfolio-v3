@@ -10,7 +10,7 @@ export default function Home() {
     <>
     <div className="max-w-6xl flex flex-col gap-24 mx-auto overflow-hidden border border-stone-300">
 
-      <div>
+      <div className="max-w-6xl">
         <Navbar />
       </div>
       <div id="hero">

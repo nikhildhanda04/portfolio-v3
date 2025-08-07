@@ -1,6 +1,8 @@
+'use client'
 
 import Image from "next/image";
 import { Project } from "./projectData";
+import { easeIn, motion } from 'framer-motion'
 
 interface ProjectsProps {
   projects: Project[]; 
@@ -9,9 +11,19 @@ interface ProjectsProps {
 export default function Projects({ projects }: ProjectsProps) {
   return (
     <div className="flex flex-col gap-24 py-12 px-6 md:px-32 border-t border-b border-stone-300">
-      <div className="font-primary font-medium text-stone-800 dark:text-stone-300 text-3xl">Projects</div>
+      <motion.div 
+                initial={{y: -20, filter: "blur(10px)"}}
+                whileInView={{y:0, filter: "blur(0px)"}}
+                transition={{duration: 0.4, ease: easeIn}}
+      className="font-primary font-medium text-stone-800 dark:text-stone-300 text-3xl">
+        Projects
+        </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start  ">
+      <motion.div 
+                initial={{y: -20, filter: "blur(10px)"}}
+                whileInView={{y:0, filter: "blur(0px)"}}
+                transition={{duration: 0.4, ease: easeIn}}
+      className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start  ">
         {projects.map((project, index) => (
           <div key={index} className="flex flex-col gap-4 px-8 py-6 border border-stone-400 items-start">
             <div className="relative w-[300px] h-[200px] md:w-[350px] md:h-[240px] mx-auto">
@@ -19,6 +31,7 @@ export default function Projects({ projects }: ProjectsProps) {
                 src={project.image}
                 alt={project.title}
                 fill
+                loading="lazy"
                 className="object-cover border border-dark rounded-lg"
               />
             </div>
@@ -52,7 +65,7 @@ export default function Projects({ projects }: ProjectsProps) {
             </a>
           </div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }

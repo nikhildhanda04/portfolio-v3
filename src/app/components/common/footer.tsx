@@ -1,11 +1,18 @@
+'use client'
+
 import { Mail, Phone} from 'lucide-react'
+import { motion, easeIn } from 'framer-motion'
 
 export default function Footer() {
     return(
         <>
         <div className="flex flex-col px-5 md:px-28 pt-12 mask-b-from-70% border-t border-b border-stone-300">
 
-            <div className="flex flex-col gap-8 px-3 ">
+            <motion.div 
+            initial={{y: -20, filter: "blur(10px)"}}
+                whileInView={{y:0, filter: "blur(0px)"}}
+                transition={{duration: 0.4, ease: easeIn}}
+            className="flex flex-col gap-8 px-3 ">
 
                 <div className='font-secondary font-bold text-3xl text-zinc-800 dark:text-zinc-300'>
                     Reach Out:
@@ -21,7 +28,7 @@ export default function Footer() {
 
                 </div>
 
-            </div>
+            </motion.div>
 
             <div className='font-[poltawaski] font-bold text-6xl md:text-8xl mt-6 -mb-10 text-zinc-800 dark:text-zinc-300 tracking-wider relative text-center '>
                 NIKHIL DHANDA

@@ -22,6 +22,7 @@ const imb_plex_mono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   title: "Nikhil Dhanda",
   description: "This is the portfolio website of Nikhil Dhanda. It has multiple sections including Projects, Experience, and a very minimal landing page",
+  icons: "/logo.png"
 };
 
 export default function RootLayout({
