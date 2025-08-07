@@ -8,13 +8,13 @@ interface ProjectsProps {
 
 export default function Projects({ projects }: ProjectsProps) {
   return (
-    <div className="flex flex-col gap-24 py-12 px-32 border border-stone-300">
+    <div className="flex flex-col gap-24 py-12 px-6 md:px-32 border-t border-b border-stone-300">
       <div className="font-primary font-medium text-stone-800 dark:text-stone-300 text-3xl">Projects</div>
 
-      <div className="grid grid-cols-2 gap-12 items-start  ">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start  ">
         {projects.map((project, index) => (
           <div key={index} className="flex flex-col gap-4 px-8 py-6 border border-stone-400 items-start">
-            <div className="relative w-[350px] h-[240px] mx-auto">
+            <div className="relative w-[300px] h-[200px] md:w-[350px] md:h-[240px] mx-auto">
               <Image
                 src={project.image}
                 alt={project.title}

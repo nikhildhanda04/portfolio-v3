@@ -1,10 +1,12 @@
 import { Linkedin, Github, Instagram, Download } from "lucide-react"
 import Image from 'next/image'
+import RevolvingText from "./revolvingText"
 
 export default function Hero(){
+
     return(
         <>
-        <div className="flex flex-col px-32 py-12 gap-20 border border-stone-300">
+        <div className="flex flex-col px-6 md:px-32 py-12 mt-20 gap-20 border-t border-b border-stone-300">
 
             <div className="flex flex-row gap-8 items-end">
 
@@ -23,22 +25,28 @@ export default function Hero(){
                         Nikhil Dhanda
                     </div>
                     <div className="font-primary text-stone-500">
-                        Design Engineer
+                        <RevolvingText/>
                     </div>
                     <div className="flex flex-row mt-4 gap-2">
                         <a 
                         className="p-3 text-stone-800 dark:text-stone-300 border border-neutral-400 rounded-full hover:shadow-[0px_3px_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0px_3px_25px_rgba(255,255,255,0.2)] transition-all duration-150 ease-in"
-                        href="">
+                        href="https://www.linkedin.com/in/nikkhildhanda/"
+                        target="_blank" rel="noopener noreferrer"
+                        >
                             <Linkedin />
                         </a>
                         <a 
                         className="p-3 text-stone-800 dark:text-stone-300 border border-neutral-400 rounded-full hover:shadow-[0px_3px_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0px_3px_25px_rgba(255,255,255,0.2)] transition-all duration-150 ease-in"
-                        href="">
+                        href="https://github.com/nikhildhanda04"
+                        target="_blank" rel="noopener noreferrer"
+                        >
                             <Github />
                         </a>
                         <a 
                         className="p-3 text-stone-800 dark:text-stone-300 border border-neutral-400 rounded-full hover:shadow-[0px_3px_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0px_3px_25px_rgba(255,255,255,0.2)] transition-all duration-150 ease-in"
-                        href="">
+                        href="https://instagram.com/nikhildhanda005"
+                        target="_blank" rel="noopener noreferrer"
+                        >
                             <Instagram />
                         </a>
                     </div>
@@ -57,7 +65,7 @@ export default function Hero(){
             </div>
 
             <a 
-            href=""
+            href="/Nikhil_Dhanda_Resume.pdf"
             download
             className="px-7 py-4 flex flex-row gap-3 bg-stone-800 dark:bg-stone-300 text-light dark:text-dark rounded-xl hover:shadow-[0px_6px_20px_rgba(0,0,0,0.3)] dark:hover:shadow-[0px_3px_25px_rgba(255,255,255,0.2)] transition-all duration-200 ease-in">
                 Resume <Download />

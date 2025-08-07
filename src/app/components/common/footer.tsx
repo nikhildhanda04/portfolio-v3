@@ -3,7 +3,7 @@ import { Mail, Phone} from 'lucide-react'
 export default function Footer() {
     return(
         <>
-        <div className="flex flex-col px-28 pt-12 mask-b-from-70% border border-stone-300">
+        <div className="flex flex-col px-5 md:px-28 pt-12 mask-b-from-70% border-t border-b border-stone-300">
 
             <div className="flex flex-col gap-8 px-3 ">
 
@@ -23,7 +23,7 @@ export default function Footer() {
 
             </div>
 
-            <div className='font-[poltawaski] font-bold text-8xl mt-6 -mb-10 text-zinc-800 dark:text-zinc-300 tracking-wider relative text-center '>
+            <div className='font-[poltawaski] font-bold text-6xl md:text-8xl mt-6 -mb-10 text-zinc-800 dark:text-zinc-300 tracking-wider relative text-center '>
                 NIKHIL DHANDA
             </div>
 

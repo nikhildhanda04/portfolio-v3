@@ -13,13 +13,13 @@ export default function Home() {
       <div>
         <Navbar />
       </div>
-      <div>
+      <div id="hero">
         <Hero />
       </div>
-      <div>
+      <div id="projects">
         <Projects projects={projects} />
       </div>
-      <div>
+      <div id="experience">
         <Experience />
       </div>
       <div>

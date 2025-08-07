@@ -1,7 +1,9 @@
+import Image from 'next/image'
+
 export default function Experience() {
     return(
         <>
-        <div className="flex flex-col gap-20 py-12 px-32 border border-stone-300">
+        <div className="flex flex-col gap-20 py-12 px-6 md:px-32 border-t border-b border-stone-300">
 
             <div className="font-primary font-medium text-3xl text-stone-800 dark:text-stone-300">
                 Experience 
@@ -9,12 +11,17 @@ export default function Experience() {
 
             <div className="flex flex-col gap-16">
 
-                <div className="flex flex-col gap-6 font-primary tracking-tight border border-stone-300 px-6 py-4">
+                <div className="flex flex-col gap-6 font-primary tracking-tight border border-stone-300  pl-9 py-7">
 
                     <div className="flex flex-col gap-1">
-                    <div className="flex flex-row">
-                        <div>
-
+                    <div className="flex flex-row items-center gap-3">
+                        <div className='relative w-10 h-10'>
+                            <Image 
+                            src="/oscode.svg"
+                            alt="oscode"
+                            fill
+                            className='object-cover  border border-zinc-500 p-1 bg-neutral-100  rounded-full'
+                            />
                         </div>
                         <div className="text-3xl font-medium text-zinc-800 dark:text-zinc-300">
                             Oscode
@@ -34,12 +41,18 @@ export default function Experience() {
 
                 </div>
 
-                <div className="flex flex-col gap-6 font-primary tracking-tight border border-stone-300 px-6 py-4">
+                <div className="flex flex-col gap-6 font-primary tracking-tight border border-stone-300 pl-9 py-7">
 
                     <div className="flex flex-col gap-1">
-                    <div className="flex flex-row">
-                        <div>
-                            
+                    <div className="flex flex-row items-center gap-3">
+                        <div className='relative w-14 h-14'>
+                            <Image 
+                            src="/wcm-.png"
+                            alt=""
+                            fill
+                            className='object-cover border border-zinc-500  bg-neutral-100  rounded-full' 
+                            />
+
                         </div>
                         <div className="text-3xl font-medium text-zinc-800 dark:text-zinc-300">
                             WebscraftMedia
