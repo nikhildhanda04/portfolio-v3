@@ -69,7 +69,7 @@ export default function Navbar() {
         initial={{y: -20, filter: "blur(10px)"}}
         whileInView={{y:0, filter: "blur(0px)"}}
         transition={{duration: 0.4, ease: easeIn}}
-        className="flex border-t border-b border-r border-stone-300 flex-row fixed w-6xl z-50 justify-between px-6  md:px-24 py-6 items-center backdrop-blur-xl bg-white/30 dark:bg-black/30">
+        className="flex border-t border-b border-r border-stone-300 md:rounded-none rounded-full md:min-w-6xl flex-row fixed z-50 justify-between px-6  md:px-24 py-6 items-center backdrop-blur-xl bg-white/30 dark:bg-black/30">
             <a
             href="#hero"
             onClick={(e) => {
@@ -80,7 +80,7 @@ export default function Navbar() {
             ND
             </a>
 
-            <div className="font-primary hidden gap-6 md:flex flex-row items-center text-xl font-medium text-neutral-500">
+            <div className="font-primary gap-6 md:flex flex-row items-center text-xl font-medium text-neutral-500">
                 {sections.map((id) => (
                     <a
                         key={id}
@@ -89,7 +89,7 @@ export default function Navbar() {
                             scrollToSection(id);
                         }}
                         href={`#${id}`}
-                        className={`hover:cursor-hand transition-all duration-100 ease-in ${
+                        className={`hover:cursor-hand hidden md:flex transition-all duration-100 ease-in ${
                             activeSection === id
                                 ? "text-dark dark:text-light "
                                 : "text-neutral-500"
@@ -99,8 +99,9 @@ export default function Navbar() {
                     </a>
                 ))}
 
+
                 <button
-                    className="bg-stone-200 dark:bg-stone-800 rounded-full p-3 ml-4 hidden md:flex items-center justify-center transition-colors duration-200"
+                    className="bg-stone-200 dark:bg-stone-800 rounded-full p-3 ml-4 flex items-center justify-center transition-colors duration-200"
                     onClick={toggleTheme}
                     aria-label="Toggle dark mode"
                     type="button"
@@ -111,7 +112,8 @@ export default function Navbar() {
                         <Moon className="inline" size={20} color="#09090B" />
                     )}
                 </button>
-            </div>
+                </div>
+
         </motion.div>
     );
 }
