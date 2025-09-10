@@ -13,6 +13,7 @@ export default function Home() {
       <div className="w-full">
         <Navbar />
       </div>
+      
       <div id="hero">
         <Hero />
       </div>

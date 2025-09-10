@@ -30,10 +30,10 @@ export const projects: Project[] = [
     image: "/Fontfinder.png", 
   },
         {
-    title: "MYOB",
+    title: "Recipe Lab",
     description: "This is a completely AI handeled money managenment dashboard, and AI suggests you how to spend money.",
-    tech: ["Nextjs", "Express", "Shadcn", "Tailwind"],
-    link: "https://github.com/nikhildhanda04/MYOB", 
-    image: "/Myob.png", 
+    tech: ["Nextjs", "JWT","Gemini API", "Tailwind"],
+    link: "https://github.com/nikhildhanda04/recipe-lab", 
+    image: "/recipelab.png", 
   },
 ];
