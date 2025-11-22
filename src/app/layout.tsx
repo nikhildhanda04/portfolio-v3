@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import CursorFollower from "./components/common/cursor";
 import { Poppins, Poltawski_Nowy, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -35,6 +36,7 @@ export default function RootLayout({
       <body
         className={`${imb_plex_mono.variable} ${poltawaski_noway.variable} ${poppins.variable} antialiased max-w-6xl mx-auto bg-light dark:bg-dark`}
       >
+        <CursorFollower />
         {children}
       </body>
     </html>

@@ -6,7 +6,7 @@ import { motion, easeIn} from 'framer-motion'
 export default function Experience() {
     return(
         <>
-        <div className="flex flex-col gap-20 py-12 px-6 md:px-32 border-t border-b border-stone-300">
+        <div className="flex flex-col gap-20 py-12 px-6 md:px-44 ">
 
             <motion.div 
                 initial={{y: -20, filter: "blur(10px)"}}
@@ -22,7 +22,7 @@ export default function Experience() {
                 initial={{y: -20, filter: "blur(10px)"}}
                 whileInView={{y:0, filter: "blur(0px)"}}
                 transition={{duration: 0.4, ease: easeIn}}
-                className="flex flex-col gap-6 font-primary tracking-tight border border-stone-300  pl-9 py-7">
+                className="flex flex-col gap-6 font-primary tracking-tight   pl-9 py-7">
 
                     <div className="flex flex-col gap-1">
                     <div className="flex flex-row items-center gap-3">
@@ -56,7 +56,7 @@ export default function Experience() {
                 initial={{y: -20, filter: "blur(10px)"}}
                 whileInView={{y:0, filter: "blur(0px)"}}
                 transition={{duration: 0.6, ease: easeIn}}
-                className="flex flex-col gap-6 font-primary tracking-tight border border-stone-300 pl-9 py-7">
+                className="flex flex-col gap-6 font-primary tracking-tight  pl-9 py-7">
 
                     <div className="flex flex-col gap-1">
                     <div className="flex flex-row items-center gap-3">

@@ -8,7 +8,7 @@ import Footer from "./components/common/footer";
 export default function Home() {
   return (
     <>
-    <div className="max-w-6xl flex flex-col gap-24 mx-auto overflow-hidden border border-stone-300">
+    <div className="max-w-6xl flex flex-col gap-24 mx-auto overflow-hidden ">
 
       <div className="w-full">
         <Navbar />

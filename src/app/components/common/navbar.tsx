@@ -8,7 +8,7 @@ const sections = ["hero", "projects", "experience"];
 
 export default function Navbar() {
     const [activeSection, setActiveSection] = useState<string>("hero");
-    const [isDark, setIsDark] = useState(false);
+    const [isDark, setIsDark] = useState(true);
 
     useEffect(() => {
         setIsDark(document.documentElement.classList.contains("dark"));
@@ -69,7 +69,7 @@ export default function Navbar() {
         initial={{y: -20, filter: "blur(10px)"}}
         whileInView={{y:0, filter: "blur(0px)"}}
         transition={{duration: 0.4, ease: easeIn}}
-        className="flex border-t border-b border-r border-stone-300 md:rounded-none rounded-r-full md:min-w-6xl flex-row fixed z-50 justify-between px-6  md:px-24 py-6 items-center backdrop-blur-xl bg-white/30 dark:bg-black/30">
+        className="flex  md:rounded-none rounded-r-full md:min-w-6xl flex-row fixed z-50 justify-between px-6  md:px-24 py-6 items-center backdrop-blur-xl bg-white/30 dark:bg-black/30">
             <a
             href="#hero"
             onClick={(e) => {

@@ -6,13 +6,13 @@ import { motion, easeIn } from 'framer-motion'
 export default function Footer() {
     return(
         <>
-        <div className="flex flex-col px-5 md:px-28 pt-12 mask-b-from-70% border-t border-b border-stone-300">
+        <div className="flex flex-col px-5 pt-12 mask-b-from-70%">
 
             <motion.div 
             initial={{y: -20, filter: "blur(10px)"}}
                 whileInView={{y:0, filter: "blur(0px)"}}
                 transition={{duration: 0.4, ease: easeIn}}
-            className="flex flex-col gap-8 px-3 ">
+            className="flex flex-col gap-8 md:px-36">
 
                 <div className='font-secondary font-bold text-3xl text-zinc-800 dark:text-zinc-300'>
                     Reach Out:
