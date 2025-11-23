@@ -1,4 +1,4 @@
-// app/api/wakatime-status/route.ts
+
 import { NextResponse } from 'next/server';
 
 const WAKATIME_API_KEY = process.env.WAKATIME_API_KEY;

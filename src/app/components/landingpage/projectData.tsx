@@ -11,8 +11,11 @@ import NodeJs from '../svgs/technologies/NodeJs';
 import MDXIcon from '../svgs/technologies/MDXIcon';
 import Ollama from '../svgs/technologies/Ollama';
 import Scikit from '../svgs/technologies/Scikit';
+import Shadcn from '../svgs/technologies/Shadcn';
+import PostgreSQL from '../svgs/technologies/PostgreSQL';
 import Vercel from '../svgs/technologies/Vercel';
 import Jwt from '../svgs/technologies/Jwt';
+import { p } from 'motion/react-client';
 
 export interface Project {
   title: string;
@@ -42,8 +45,10 @@ const techMap: Record<string, React.ComponentType<{ className?: string }>> = {
   nodejs: NodeJs,
   manifest: MDXIcon,
   vercel: Vercel,
+  postgresql: PostgreSQL,
   ollama: Ollama,
   scikit: Scikit,
+  shadcn: Shadcn,
   jwt: Jwt,
 };
 
@@ -67,7 +72,7 @@ export const projects: Project[] = [
     description: "This is an AI-based job finding platform. Just upload your resume and voila! It finds the best-suited jobs for you and auto-applies.",
     tech: mapTechs(["Nextjs", "Mongo", "NLP", "Scikit", "Motion", "Vercel"]),
     link: "https://github.com/nikhildhanda04/next-hire", 
-    live: "https://nexthire.vercel.app/",
+    live: "https://next-hire-bice.vercel.app/",
     image: "/Nexthire.png", 
     isWorking: false,
   },
@@ -81,21 +86,21 @@ export const projects: Project[] = [
     isWorking: true,
   },
   {
-    title: "Font Finder",
-    description: "This parses into the project directory and passes out the font and its details used in that project.",
-    tech: mapTechs(["Reactjs", "Manifest", "Motion", "Vercel"]),
-    link: "https://github.com/nikhildhanda04/FontFinder", 
-    live: "https://font-finder.vercel.app/",
-    image: "/Fontfinder.png",
+    title: "Warm Reach",
+    description: "This is an AI-based email generator that helps you in drafting cold emails to reach out to potential clients effectively.",
+    tech: mapTechs(["Nextjs", "typescript", "mongodb", "Vercel"]),
+    link: "https://github.com/nikhildhanda04/Warm-Reach", 
+    live: "https://warmreach.vercel.app/",
+    image: "/warm-reach.png",
     isWorking: true, 
   },
   {
-    title: "Recipe Lab",
-    description: "This is a completely AI handeled money managenment dashboard, and AI suggests you how to spend money.",
-    tech: mapTechs(["Nextjs", "JWT","Gemini API", "Tailwind", "Vercel"]),
-    link: "https://github.com/nikhildhanda04/recipe-lab", 
-    live: "https://recipelab.vercel.app/",
-    image: "/recipelab.png", 
-    isWorking: true,
+    title: "VitB Notes",
+    description: "An online platform to share and access study notes for various courses at VIT Bhopal.",
+    tech: mapTechs(["Nextjs", "JWT","Gemini API", "Tailwind", "Vercel", "Shadcn", "PostgreSQL" ]),
+    link: "https://github.com/nikhildhanda04/vitb-notes", 
+    live: "https://github.com/nikhildhanda04/vitb-notes",
+    image: "/vitb-notes.png", 
+    isWorking: false,
   },
 ];
