@@ -97,7 +97,7 @@ export default function Hero(){
                 initial={{opacity:0, y: -20, filter: "blur(10px)"}}
                 whileInView={{opacity:1, y:0, filter: "blur(0px)"}}
                 transition={{duration: 0.7, ease: easeIn}} 
-            href="/Nikhil_Dhanda_Resume.pdf"
+            href="/Nikhil_Dhanda_Resume_FullStack_Dev.pdf"
             download
             className="px-7 py-4 flex flex-row gap-3 bg-stone-800 dark:bg-stone-300 text-light dark:text-dark rounded-xl hover:shadow-[0px_6px_20px_rgba(0,0,0,0.3)] dark:hover:shadow-[0px_3px_25px_rgba(255,255,255,0.2)] transition-all duration-200 ease-in">
                 Resume <Download />
