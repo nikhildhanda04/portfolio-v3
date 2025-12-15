@@ -14,8 +14,17 @@ import Scikit from '../svgs/technologies/Scikit';
 import Shadcn from '../svgs/technologies/Shadcn';
 import PostgreSQL from '../svgs/technologies/PostgreSQL';
 import Vercel from '../svgs/technologies/Vercel';
+import GoogleSheets from '../svgs/technologies/GoogleSheets';
+import GoogleDrive from '../svgs/technologies/GoogleDrive';
 import Jwt from '../svgs/technologies/Jwt';
-import { p } from 'motion/react-client';
+import Prisma from '../svgs/technologies/Prisma';
+import Gemini from '../svgs/technologies/Gemini';
+import Puppeteer from '../svgs/technologies/Puppeteer';
+import Zod from '../svgs/technologies/Zod';
+import OpenAi from '../svgs/technologies/OpenAi';
+import Vite from '../svgs/technologies/Vite';
+import ReactFlow from '../svgs/technologies/ReactFlow';
+import Axios from '../svgs/technologies/Axios';
 
 export interface Project {
   slug: string;
@@ -32,6 +41,8 @@ export interface Project {
   team?: string;
   features?: { title: string; description: string }[];
   motivation?: { title: string; description: string; points: string[] };
+  challenges?: string[];
+  learnings?: string[];
 }
 
 const techMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -57,6 +68,20 @@ const techMap: Record<string, React.ComponentType<{ className?: string }>> = {
   scikit: Scikit,
   shadcn: Shadcn,
   jwt: Jwt,
+  sheets: GoogleSheets,
+  googlesheets: GoogleSheets,
+  drive: GoogleDrive,
+  googledrive: GoogleDrive,
+  prisma: Prisma,
+  gemini: Gemini,
+  google: Gemini,
+  puppeteer: Puppeteer,
+  zod: Zod,
+  openai: OpenAi,
+  gpt: OpenAi,
+  vite: Vite,
+  reactflow: ReactFlow,
+  axios: Axios,
 };
 
 const mapTechs = (techs: string[]) => {
@@ -78,79 +103,122 @@ export const projects: Project[] = [
     slug: "next-hire",
     title: "Next Hire",
     tagline: "AI based job finding platform",
-    description: "This is an AI-based job finding platform. Just upload your resume and voila! It finds the best-suited jobs for you and auto-applies.",
-    tech: mapTechs(["Nextjs", "Mongo", "NLP", "Scikit", "Motion", "Vercel"]),
+    description: "Built a full-stack AI platform using Next.js 16 and TypeScript to automate resume parsing and job application autofill, reducing application time by 40%. Features a fault-tolerant RAG pipeline and hybrid scraping engine.",
+    tech: mapTechs(["Nextjs", "TypeScript", "Tailwind", "PostgreSQL", "Prisma", "Gemini", "Puppeteer", "Zod"]),
     link: "https://github.com/nikhildhanda04/next-hire",
     live: "https://next-hire-bice.vercel.app/",
-    image: "/Nexthire.png",
+    image: "/Next Hire.jpeg",
     isWorking: false,
     timeline: "Nov 2025 - Present",
     role: "Full Stack Developer",
     team: "Solo",
+    features: [
+      {title: "AI-Powered Resume Parsing", description: "Instantly converts raw PDF into structured data using custom schemas via Gemini 2.0 & OpenAI."},
+      {title: "Smart Autofill Extension", description: "Chrome extension that 'reads' job pages and fills complex questions using profile context."},
+      {title: "Bring Your Own Key (BYOK)", description: "Flexible auth system allowing power users to input their own Gemini/OpenAI keys."},
+      {title: "Hybrid Scraping Engine", description: "Polymorphic engine switching between Puppeteer and Cheerio for optimal parsing."},
+    ],
+    learnings: [
+      "Prompt Engineering is Code: Treated prompts as composable, typed software artifacts.",
+      "Defensive API Design: Externalized state to DB/Redis for reliable serverless rate limiting.",
+      "Stream Handling: Managed long-running AI streams with careful client-side chunk handling.",
+    ],
+    challenges: [
+      "Engineered a self-healing JSON parsing layer (jsonrepair) to handle non-deterministic LLM outputs.",
+      "Architected a context-aware 'RAG-Lite' engine acting as a retrieval orchestrator.",
+      "Built a distributed Token Bucket rate limiter using PostgreSQL transactions for serverless.",
+      "Implemented a hybrid polymorphic scraping engine switching between Cheerio and Puppeteer.",
+    ],
   },
   {
     slug: "roadmap-generator",
-    title: "Roadmap Generator",
-    tagline: "Simple and minimal roadmap generator",
-    description: "This is a saas project, which runs on local LLM model and uses reactflow to generate roadmap that help you in learning",
-    tech: mapTechs(["Reactjs", "Mongo", "Ollama", "Express", "jwt", "Motion", "Vercel"]),
+    title: "AI Roadmap Generator",
+    tagline: "Intelligent Learning Pathways",
+    description: "An intelligent, interactive learning platform that transforms abstract learning goals into structured, step-by-step visual pathways using AI. Features a custom DAG visualization engine and smart responsive layouts.",
+    tech: mapTechs(["Reactjs", "JavaScript", "Vite", "NodeJs", "Express", "Tailwind", "Motion", "ReactFlow", "Axios"]),
     link: "https://github.com/nikhildhanda04/Roadmap-Generator",
     live: "https://roadmapgenerator.vercel.app/",
-    image: "/Roadmap.png",
+    image: "/Roadmap Gen.jpeg",
     isWorking: true,
     timeline: "Aug 2024 - Nov 2024",
     role: "Full Stack Developer",
     team: "Solo",
+    features: [
+      {title: "AI-Driven Content Gen", description: "Dynamically generates comprehensive learning paths based on user input via backend AI service."},
+      {title: "Interactive DAG Visuals", description: "Visualizes learning paths as connected graphs with dependencies using a custom layout engine."},
+      {title: "Smart Responsive Layout", description: "Automatically adapts graph structure: columnar for desktop, vertical stack for mobile."},
+      {title: "Dynamic Prerequisite Map", description: "Visualizes non-linear dependencies between modules using dashed connection lines."},
+    ],
+    learnings: [
+      "Mastered React Flow to build a custom visualization engine for hierarchical data.",
+      "Implemented complex responsive logic to transform graph layouts based on device viewport.",
+      "Orchestrated smooth fluid animations using Framer Motion for asynchronous state changes.",
+    ],
+    challenges: [
+      "Engineered a two-pass custom layout algorithm to map hierarchical JSON to flat node coordinates.",
+      "Solved complex mobile visualization challenges by switching layout strategies at runtime.",
+      "Integrated Framer Motion to create polished entrance animations during async AI generation.",
+    ],
   },
   {
-    slug: "warm-reach",
-    title: "Warm Reach",
-    tagline: "AI based email generator",
-    description: "This is an AI-based email generator that helps you in drafting cold emails to reach out to potential clients effectively.",
-    tech: mapTechs(["Nextjs", "typescript", "mongodb", "Vercel"]),
-    link: "https://github.com/nikhildhanda04/Warm-Reach",
-    live: "https://warmreach.vercel.app/",
-    image: "/warm-reach.png",
+    slug: "law-journal",
+    title: "Law Journal",
+    tagline: "A blog website for law students",
+    description: "A highly optimized Next.js blog that eliminates CMS costs by engineering a custom adapter for Google Sheets and Drive, featuring ISR for static performance and dynamic content updates.",
+    tech: mapTechs(["Nextjs", "TypeScript", "Reactjs", "Tailwind", "Motion", "Vercel", "Google Sheets", "Google Drive"]),
+    link: "https://github.com/nikhildhanda04/reblog",
+    live: "https://lawjournal-rho.vercel.app/",
+    image: "/Law Journal .jpeg",
     isWorking: true,
-    timeline: "Sep 2024 - Oct 2024",
+    timeline: "",
     role: "Full Stack Developer",
     team: "Solo",
+    features: [
+      {title: "Headless Google Sheets CMS", description: "Custom adapter transforming raw spreadsheet rows into fully typed content."},
+      {title: "Zero-Cost Asset Hosting", description: "Clever URL transformation to use Google Drive as a CDN for blog images."},
+      {title: "Incremental Static Regeneration", description: "Configured via ISR to serve static HTML that updates automatically every minute."},
+      {title: "Type-Safe Architecture", description: "Full TypeScript implementation extending from the API layer to React components."},
+    ],
+    learnings: [
+      "Deepened understanding of Next.js 15 App Router and server-side data fetching/caching.",
+      "Mastered Service Account Authentication for secure GCP server-to-server requests.",
+      "Applied the Adapter Pattern to bridge incompatible Google Sheets data with modern UI.",
+    ],
+    challenges: [
+      "engineered a middleware layer to safely map untyped 2D arrays to typed interfaces.",
+      "Reverse-engineered Google Drive URLs to create a regex translater for serving images directly.",
+      "Implemented server-side caching with ISR to reduce Google API calls by over 95%.",
+    ],
   },
   {
     slug: "vitb-notes",
     title: "VitB Notes",
-    tagline: "Online platform to share and access study notes for various courses at VIT Bhopal",
-    description: "An online platform to share and access study notes for various courses at VIT Bhopal.",
-    tech: mapTechs(["Nextjs", "JWT", "Gemini API", "Tailwind", "Vercel", "Shadcn", "PostgreSQL"]),
+    tagline: "AI-Powered Study Companion",
+    description: "An advanced educational platform utilizing Gemini 2.0 Flash to transform raw syllabus materials into structured, textbook-quality notes and quizzes. Features a resilient AI pipeline and modern type-safe stack.",
+    tech: mapTechs(["Nextjs", "TypeScript", "NodeJs", "Reactjs", "Tailwind", "Motion", "PostgreSQL", "Prisma"]),
     link: "https://github.com/nikhildhanda04/vitb-notes",
     live: "https://www.vitbnotes.info/",
-    image: "/vitb-notes.png",
+    image: "/Vitb Notes.jpeg",
     isWorking: true,
     timeline: "Aug 2024 - Sep 2024",
     role: "Full Stack Developer",
     team: "Solo",
     features: [
-      { title: "Find Notes", description: "Search and access notes by year or semester (1st to 4th year)." },
-      { title: "Share Resources", description: "Share notes and materials with friends." },
-      { title: "Use Flashcards", description: "Practice with interactive flashcards for active recall." },
-      { title: "Attempt Quizzes", description: "Test your knowledge with practice quizzes." },
-      { title: "Access PYQs", description: "Get previous year questions (PYQs) with answers." },
-      { title: "One-Shots", description: "Quick review materials for last-minute prep." },
-      { title: "Topper Notes", description: "Handwritten notes from top-performing students." },
-      { title: "AI Study Assistant", description: "(Coming soon) Get instant answers to your study questions." },
-      { title: "Video Material", description: "Watch video explanations for better understanding." },
+      { title: "AI-Driven Content Gen", description: "Generates comprehensive markdown notes with LaTeX and Mermaid diagrams via Gemini 2.0 Flash." },
+      { title: "Resilient AI Pipeline", description: "Implements schema validation, JSON repair, and exponential backoff retry logic for reliability." },
+      { title: "Multi-Modal Parsing", description: "Ingests PDFs and images (OCR) to create structured study materials." },
+      { title: "Role-Based Generation", description: "Secure admin-only generation endpoints using Better Auth and session verification." },
     ],
-    motivation: {
-      title: "Why i built this",
-      description: "I built this platform to solve a fundamental issue i faced while studying as follows -",
-      points: [
-        "Professors don't share notes with students.",
-        "Toppers notes are not available to everyone.",
-        "Notes are scattered & not organized.",
-        "Reading one notes and then another notes is a pain with no sync, same example's and tone of writing.",
-        "I don't want to read notes from a pdf, i want to customize my reading experience.",
-      ]
-    }
+    challenges: [
+      "Implemented a 'repair-and-retry' resiliency layer with jsonrepair to handle malformed LLM JSON outputs.",
+      "Built a custom exponential backoff strategy to manage API rate limits during bulk generation.",
+      "Enforced strict type-safety across the stack, ensuring AI output schemas mirror the Prisma database model.",
+    ],
+    learnings: [
+      "Mastered prompt engineering to direct AI personas and enforce strict schema adherence.",
+      "Gained expertise in building robust, error-tolerant backend systems for long-running AI processes.",
+      "Leveraged Next.js 16 and Tailwind v4 to implement bleeding-edge frontend standards.",
+    ]
   },
 ];
 

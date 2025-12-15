@@ -179,6 +179,39 @@ export default async function ProjectPage({
                             ))}
                         </ul>
                     </div>
+
+                                        {/* Challenges & Learnings */}
+                    {(project.challenges || project.learnings) && (
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+                            {project.challenges && (
+                                <div className="p-8 rounded-2xl bg-red-50 border border-red-100">
+                                    <h2 className="text-2xl font-bold text-red-900 mb-6">Challenges I Faced</h2>
+                                    <ul className="space-y-4">
+                                        {project.challenges.map((challenge, index) => (
+                                            <li key={index} className="flex items-start gap-3">
+                                                <span className="mt-2.5 w-1.5 h-1.5 rounded-full bg-red-900 shrink-0" />
+                                                <p className="text-lg text-red-800 leading-relaxed">{challenge}</p>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+                            {project.learnings && (
+                                <div className="p-8 rounded-2xl bg-green-50 border border-green-100">
+                                    <h2 className="text-2xl font-bold text-green-900 mb-6">How I Overcame Them</h2>
+                                    <ul className="space-y-4">
+                                        {project.learnings.map((learning, index) => (
+                                            <li key={index} className="flex items-start gap-3">
+                                                <span className="mt-2.5 w-1.5 h-1.5 rounded-full bg-green-900 shrink-0" />
+                                                <p className="text-lg text-green-800 leading-relaxed">{learning}</p>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+                        </div>
+                    )}
+                    
                 </div>
 
 
