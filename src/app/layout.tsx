@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import CursorFollower from "./components/common/cursor";
 import { Poppins, Poltawski_Nowy, IBM_Plex_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react"
 import "./globals.css";
 
 const poppins = Poppins({
@@ -32,12 +33,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body
-        className={`${imb_plex_mono.variable} ${poltawaski_noway.variable} ${poppins.variable} antialiased max-w-6xl mx-auto bg-light dark:bg-dark`}
+        className={`${imb_plex_mono.variable} ${poltawaski_noway.variable} ${poppins.variable} antialiased bg-light dark:bg-dark text-stone-900 dark:text-stone-300 min-h-screen p-4 md:p-8`}
       >
-        <CursorFollower />
-        {children}
+        <div className="max-w-6xl mx-auto border border-stone-300 dark:border-stone-800 min-h-[calc(100vh-2rem)] md:min-h-[calc(100vh-4rem)] relative">
+          <CursorFollower />
+          {children}
+          <Analytics />
+        </div>
       </body>
     </html>
   );

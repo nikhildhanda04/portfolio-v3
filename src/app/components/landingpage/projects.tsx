@@ -80,7 +80,7 @@ export default function Projects({ projects }: ProjectsProps) {
               </div>
 
 
-              <div className="font-secondary text-stone-500 mt-2">
+              <div className="font-secondary text-sm tracking-tight text-stone-500 mt-2">
                 {project.description}
               </div>
 

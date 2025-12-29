@@ -103,7 +103,7 @@ export const projects: Project[] = [
     slug: "next-hire",
     title: "Next Hire",
     tagline: "AI based job finding platform",
-    description: "Built a full-stack AI platform using Next.js 16 and TypeScript to automate resume parsing and job application autofill, reducing application time by 40%. Features a fault-tolerant RAG pipeline and hybrid scraping engine.",
+    description: "A full-stack AI platform and Extension to automate resume parsing and job application autofill, reducing application time by 40%. Features a fault-tolerant RAG pipeline and hybrid scraping engine.",
     tech: mapTechs(["Nextjs", "TypeScript", "Tailwind", "PostgreSQL", "Prisma", "Gemini", "Puppeteer", "Zod"]),
     link: "https://github.com/nikhildhanda04/next-hire",
     live: "https://next-hire-bice.vercel.app/",

@@ -1,6 +1,6 @@
 'use client'
 
-import { Linkedin, Github, Instagram, Download } from "lucide-react"
+import { Linkedin, Github, Instagram } from "lucide-react"
 import Image from 'next/image'
 import VSCodeStatusWidget from "./vscodestatus"
 // import RevolvingText from "./revolvingText"
@@ -9,115 +9,115 @@ import { easeIn, motion } from 'framer-motion';
 export default function Hero(){
 
     return(
-        <>
-        <div className="flex flex-col px-6 md:px-44 py-12 gap-20 ">
-
-            <div className="flex flex-col gap-8 items-start">
-
+        <div className=" relative flex flex-col px-6 md:px-44 py-12 gap-12">
+            
+            {/* Header Block: Profile + Name/Info */}
+            <div className="flex flex-col md:flex-row items-center md:items-end gap-8 md:gap-12">
+                
+                {/* Profile Picture */}
                 <motion.div 
-                initial={{opacity:0, y: -20, filter: "blur(10px)"}}
-                whileInView={{opacity:1, y:0, filter: "blur(0px)"}}
-                transition={{duration: 0.5, ease: easeIn}}
-                className="rounded-full relative w-48 h-48 ">
-                    <Image 
-                    src="/Profile.png"
-                    alt=""
-                    fill
-                    className="object-cover rounded-full p-1"
-                    />
-                <div className="absolute bottom-1 right-8 z-10">   
-                    <VSCodeStatusWidget />
-                </div>
+                    initial={{opacity:0, scale: 0.9, filter: "blur(10px)"}}
+                    whileInView={{opacity:1, scale:1, filter: "blur(0px)"}}
+                    transition={{duration: 0.5, ease: easeIn}}
+                    className="relative w-48 h-48 flex-shrink-0"
+                >
+                    <div className="w-full h-full rounded-full border-[6px] border-stone-800 dark:border-stone-300 overflow-hidden relative">
+                        <Image 
+                            src="/Profile.png"
+                            alt="Nikhil Dhanda"
+                            fill
+                            className="object-cover"
+                        />
+                    </div>
+                    <div className="absolute bottom-1 right-2 z-10">   
+                        <VSCodeStatusWidget />
+                    </div>
                 </motion.div>
-                
-                
-                {/* <motion.div 
-                initial={{opacity:0, y: -20, filter: "blur(10px)"}}
-                whileInView={{opacity:1, y:0, filter: "blur(0px)"}}
-                transition={{duration: 0.7, ease: easeIn}}
-                className="flex flex-col gap-2 py-8">
-                    {/* <div className="font-primary text-3xl font-medium text-stone-800 dark:text-stone-300">
-                        Nikhil Dhanda
+
+                {/* Name and Info */}
+                <div className="flex flex-col items-center md:items-start flex-grow gap-4">
+                    <motion.div 
+                        initial={{opacity:0, x: 20}}
+                        whileInView={{opacity:1, x:0}}
+                        transition={{duration: 0.5}}
+                        className="flex items-center gap-3"
+                    >
+                        <h1 className="text-4xl md:text-5xl font-bold font-primary text-stone-800 dark:text-stone-300">
+                            Nikhil Dhanda
+                        </h1>
+                        <VerifiedBadge />
+                    </motion.div>
+
+                    <motion.div 
+                        initial={{opacity:0, x: 20}}
+                        whileInView={{opacity:1, x:0}}
+                        transition={{duration: 0.5, delay: 0.1}}
+                        className="flex flex-wrap items-center justify-center md:justify-start gap-3 font-secondary text-sm text-stone-500 uppercase tracking-tighter"
+                    >
+                        <span>20</span>
+                        <div className="w-1 h-1 bg-stone-500 rounded-full" />
+                        <span>Full Stack Developer</span>
+                        <div className="w-1 h-1 bg-stone-500 rounded-full" />
+                        <span>Engineer</span>
+                        <div className="w-1 h-1 bg-stone-500 rounded-full" />
+                        <span>Builder</span>
+                    </motion.div>
+
+                    {/* Socials & Resume */}
+                    <div className="flex items-center gap-4 mt-2">
+                        <div className="flex gap-4">
+                             <a href="mailto:nikhildhanda005@gmail.com" className="text-stone-800 dark:text-stone-300 hover:opacity-70">
+                                <GmailIcon />
+                            </a>
+                            <a href="https://github.com/nikhildhanda04" target="_blank" rel="noopener noreferrer" className="text-stone-800 dark:text-stone-300 hover:opacity-70">
+                                <Github className="w-5 h-5" />
+                            </a>
+                            <a href="https://www.linkedin.com/in/nikkhildhanda/" target="_blank" rel="noopener noreferrer" className="text-stone-800 dark:text-stone-300 hover:opacity-70">
+                                <Linkedin className="w-5 h-5" />
+                            </a>
+                            <a href="https://instagram.com/nikhildhanda005" target="_blank" rel="noopener noreferrer" className="text-stone-800 dark:text-stone-300 hover:opacity-70">
+                                <Instagram className="w-5 h-5" />
+                            </a>
+                        </div>
                         
+                        <a 
+                            href="/Nikhil_Dhanda_Resume_FullStack_Dev.pdf"
+                            download
+                            className="ml-4 px-4 py-1.5 border border-stone-800 dark:border-stone-300 text-xs font-secondary dark:text-stone-300 uppercase tracking-widest hover:bg-stone-800 hover:text-white dark:hover:bg-stone-300 dark:hover:text-black transition-all"
+                        >
+                            Resume
+                        </a>
                     </div>
-                    
-                    <div className="font-primary text-stone-500">
-                        <RevolvingText/>
-                    </div> */}
-                    
-
-                {/* </motion.div> */} 
-
+                </div>
             </div>
 
-            <div className="flex flex-col items-start gap-8 ">
-
+            {/* About Section */}
             <motion.div 
-                initial={{opacity:0, y: -20, filter: "blur(10px)"}}
-                whileInView={{opacity:1, y:0, filter: "blur(0px)"}}
-                transition={{duration: 0.7, ease: easeIn}}
-            className="font-secondary tracking-wide text-stone-800 dark:text-stone-300" > 
-               <span className="text-4xl font-primary font-semibold dark:text-stone-300 text-stone-800"> Hey! I am Nikhil - <span className="text-stone-500">A Full Stack Developer</span> </span> <br/> -- a design engineer focused on creating high performance, user centric, engaging web applications. <br />
-                Having a experience of over 2 years, and catering to a industry that I am passionate about, I like <span className="font-bold">building flows that capture audience</span> and look and feel highly <span className="font-bold">professional</span>.<br /> 
-                Let’s <span className="font-bold">connect and collaborate</span>.
+                initial={{opacity:0, y: 20}}
+                whileInView={{opacity:1, y:0}}
+                transition={{duration: 0.5, delay: 0.3}}
+                className="flex flex-col gap-4 mt-4"
+            >
+                <h2 className="text-2xl font-bold font-primary text-stone-800 dark:text-stone-300 uppercase tracking-tight">About</h2>
+                <p className="max-w-3xl font-secondary mb-10 tracking-tight text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
+                   a design engineer focused on creating high performance, user centric, engaging web applications.
+                    Having a experience of over 2 years, and catering to a industry that I am passionate about, I like building flows that capture audience and look and feel highly professional.
+                    Let’s connect and collaborate.
+                </p>
             </motion.div>
-            <div className="flex flex-row mt-4 gap-2">
-                        <a 
-                        className="p-3 text-stone-800 dark:text-stone-300 border border-neutral-400 rounded-full hover:shadow-[0px_3px_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0px_3px_25px_rgba(255,255,255,0.2)] transition-all duration-150 ease-in"
-                        href="https://www.linkedin.com/in/nikkhildhanda/"
-                        target="_blank" rel="noopener noreferrer"
-                        >
-                            <Linkedin />
-                        </a>
-                        <a 
-                        className="p-3 text-stone-800 dark:text-stone-300 border border-neutral-400 rounded-full hover:shadow-[0px_3px_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0px_3px_25px_rgba(255,255,255,0.2)] transition-all duration-150 ease-in"
-                        href="https://github.com/nikhildhanda04"
-                        target="_blank" rel="noopener noreferrer"
-                        >
-                            <Github />
-                        </a>
-                        <a
-                        className="py-3 px-4 text-stone-800 dark:text-stone-300 border border-neutral-400 rounded-full hover:shadow-[0px_3px_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0px_3px_25px_rgba(255,255,255,0.2)] transition-all duration-150 ease-in flex items-center justify-center"
-                        href="https://x.com/NikkhilDhanda"
-                        target="_blank" rel="noopener noreferrer" aria-label="Twitter"
-                        >
-                        <X />
-                        </a>
-                        <a 
-                        className="p-3 text-stone-800 dark:text-stone-300 border border-neutral-400 rounded-full hover:shadow-[0px_3px_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0px_3px_25px_rgba(255,255,255,0.2)] transition-all duration-150 ease-in"
-                        href="https://instagram.com/nikhildhanda005"
-                        target="_blank" rel="noopener noreferrer"
-                        >
-                            <Instagram />
-                        </a>
-                        
-                    </div>
 
-            <motion.a
-                initial={{opacity:0, y: -20, filter: "blur(10px)"}}
-                whileInView={{opacity:1, y:0, filter: "blur(0px)"}}
-                transition={{duration: 0.7, ease: easeIn}} 
-            href="/Nikhil_Dhanda_Resume_FullStack_Dev.pdf"
-            download
-            className="px-7 py-4 flex flex-row gap-3 bg-stone-800 dark:bg-stone-300 text-light dark:text-dark rounded-xl hover:shadow-[0px_6px_20px_rgba(0,0,0,0.3)] dark:hover:shadow-[0px_3px_25px_rgba(255,255,255,0.2)] transition-all duration-200 ease-in">
-                Resume <Download />
-            </motion.a>
-
-            </div>
         </div>
-        </>
     )
 }
 
-const X = () => {
-    return(
-        <>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="bi bi-twitter-x w-4 h-4" viewBox="0 0 16 16" id="Twitter-X--Streamline-Bootstrap" height="16" width="16" aria-hidden="true">
-<desc>
-    Twitter X Streamline Icon: https://streamlinehq.com
-  </desc>
-    <path d="M12.6 0.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867 -5.07 -4.425 5.07H0.316l5.733 -6.57L0 0.75h5.063l3.495 4.633L12.601 0.75Zm-0.86 13.028h1.36L4.323 2.145H2.865z" strokeWidth="1"></path>
-</svg>
-        </>
-    )
-}
+const VerifiedBadge = () => (
+    <svg viewBox="0 0 24 24" className="w-8 h-8 text-blue-500 fill-current">
+        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+    </svg>
+)
+
+const GmailIcon = () => (
+    <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+    </svg>
+)
