@@ -51,15 +51,25 @@ const experiences: ExperienceItem[] = [
 export default function Experience() {
     return(
         <>
-        <div id="experience" className="flex flex-col gap-20 py-12 px-6 md:px-44 ">
+        <div id="experience" className="flex flex-col gap-20 py-12 px-6 md:px-56 ">
 
-            <motion.div 
-                initial={{y: -20, filter: "blur(10px)"}}
-                whileInView={{y:0, filter: "blur(0px)"}}
-                transition={{duration: 0.4, ease: easeIn}}
-            className="font-primary font-medium text-3xl text-stone-800 dark:text-stone-300">
-                Experience 
-            </motion.div>
+            <div>
+                    <motion.div
+                      initial={{ y: -20, filter: "blur(10px)" }}
+                      whileInView={{ y: 0, filter: "blur(0px)" }}
+                      transition={{ duration: 0.4, ease: easeIn }}
+                      className="font-primary font-medium text-lg text-stone-500">
+                      Complete
+                    </motion.div>
+                    <motion.div
+                      initial={{ y: -20, filter: "blur(10px)" }}
+                      whileInView={{ y: 0, filter: "blur(0px)" }}
+                      transition={{ duration: 0.4, ease: easeIn }}
+                      className="font-primary font-medium text-stone-800 dark:text-stone-300 text-3xl">
+                      Experience
+                    </motion.div>
+            
+                  </div>
 
             <div className="flex flex-col gap-16">
                 {experiences.map((exp, index) => (
@@ -68,7 +78,7 @@ export default function Experience() {
                         initial={{y: -20, filter: "blur(10px)"}}
                         whileInView={{y:0, filter: "blur(0px)"}}
                         transition={{duration: 0.4 + (index * 0.2), ease: easeIn}}
-                        className="flex flex-col gap-6 font-primary tracking-tight pl-9 py-7"
+                        className="flex flex-col gap-6 font-primary tracking-tight  py-7"
                     >
                         <div className="flex flex-col gap-1">
                             <div className="flex flex-row items-center gap-3">
@@ -96,7 +106,7 @@ export default function Experience() {
                             </div>
                         </div>
 
-                        <ul className="font-secondary text-stone-500 dark:text-stone-500 list-disc list-inside space-y-2">
+                        <ul className="font-secondary tracking-tighter text-sm text-stone-500 dark:text-stone-500 list-disc list-inside space-y-2">
                             {exp.points.map((point, i) => (
                                 <li key={i}>{point}</li>
                             ))}

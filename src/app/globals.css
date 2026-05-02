@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+
 @font-face{
   font-family: 'plex';
   src: url("/fonts/IBMPlexMono-Regular.ttf") format('truetype');
@@ -17,8 +20,8 @@
 @theme {
   --color-light: #FAF9F6;
   --color-dark: #09090B;
-  --font-logo: "poltawaski". sans-serif;
-  --font-primary: "Poppins";
+  --font-logo: "poltawaski", sans-serif;
+  --font-primary: "Instrument Serif", serif;
   --font-secondary: "plex", sans-serif;
 }
 
