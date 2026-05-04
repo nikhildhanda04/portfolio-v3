@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Jwt({ className }: { className?: string }) {
 	return (
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="Jwt-Icon--Streamline-Svg-Logos" height="24" width="24">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="Jwt-Icon--Streamline-Svg-Logos" height="24" width="24" className={className}>
   <desc>
     Jwt Icon Streamline Icon: https://streamlinehq.com
   </desc>
