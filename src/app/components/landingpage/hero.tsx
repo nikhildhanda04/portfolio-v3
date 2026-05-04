@@ -61,7 +61,7 @@ export default function Hero(){
                             transition={{duration: 0.5, delay: 0.4}}
                             className="flex flex-wrap items-center justify-start gap-2.5 font-secondary text-sm md:text-base text-stone-500 dark:text-stone-400 font-medium"
                         >
-                            <span>22</span>
+                            <span>21</span>
                             <span className="w-1 h-1 bg-stone-400 dark:bg-stone-600 rounded-full" />
                             <span>engineer</span>
                             <span className="w-1 h-1 bg-stone-400 dark:bg-stone-600 rounded-full" />
