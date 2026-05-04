@@ -34,7 +34,7 @@ export default function Hero(){
                         initial={{opacity:0, scale: 0.9}}
                         animate={{opacity:1, scale:1}}
                         transition={{duration: 0.5, delay: 0.2}}
-                        className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-[1px] border-light dark:border-dark bg-light dark:bg-dark"
+                        className="relative w-32 h-32 md:w-40 md:h-40 ml-2 mt-3 rounded-full overflow-hidden border-[1px] border-light dark:border-dark bg-light dark:bg-dark"
                     >
                         <Image 
                             src="/Profile.png"
