@@ -1,6 +1,6 @@
 'use client'
 
-import { Mail, Phone} from 'lucide-react'
+
 import { motion, easeIn } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
@@ -54,10 +54,10 @@ export default function Footer() {
 
                     <div className="flex flex-col gap-3 mt-2">
                         <div className="flex flex-row gap-5 font-secondary text-zinc-800 dark:text-zinc-300 text-sm md:text-base hover:underline hover:italic transition-all duration-200 ease-in items-center">
-                            <Mail className="w-5 h-5"/> nikhildhanda84@gmail.com
+                            <MailIcon /> nikhildhanda84@gmail.com
                         </div>
                         <div className="flex flex-row gap-5 font-secondary text-zinc-800 dark:text-zinc-300 text-sm md:text-base hover:underline hover:italic transition-all duration-200 ease-in items-center">
-                            <Phone className="w-5 h-5"/> +91 9215593793
+                            <PhoneIcon /> +91 9215593793
                         </div>
                     </div>
 
@@ -111,3 +111,16 @@ export default function Footer() {
         </>
     )
 }
+
+const MailIcon = () => (
+    <svg viewBox="0 0 24 24" className="w-5 h-5 fill-none stroke-current stroke-2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
+        <rect x="2" y="4" width="20" height="16" rx="2" />
+    </svg>
+)
+
+const PhoneIcon = () => (
+    <svg viewBox="0 0 24 24" className="w-5 h-5 fill-none stroke-current stroke-2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
+    </svg>
+)

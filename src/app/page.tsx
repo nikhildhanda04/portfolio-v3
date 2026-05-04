@@ -1,4 +1,4 @@
-import Navbar from "./components/common/navbar";
+
 import Hero from "./components/landingpage/hero";
 import Projects from "./components/landingpage/projects";
 import {projects} from "./components/landingpage/projectData";
@@ -10,11 +10,7 @@ export default function Home() {
     <>
     <div className="flex flex-col gap-0 overflow-hidden ">
 
-      <div className="w-full">
-        <Navbar />
-      </div>
-      
-      <div id="hero" className="relative top-10">
+      <div id="hero" className="relative">
         <Hero />
       </div>
 

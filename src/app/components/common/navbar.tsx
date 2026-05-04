@@ -1,33 +1,14 @@
 'use client';
 
 import { useEffect, useState } from "react";
-import { Moon, Sun } from 'lucide-react';
+import { ModeToggle } from "./theme-toggle";
 import { motion,easeIn } from 'framer-motion'
 
 const sections = ["hero", "projects", "experience"];
 
 export default function Navbar() {
     const [activeSection, setActiveSection] = useState<string>("hero");
-    const [isDark, setIsDark] = useState(true);
 
-    useEffect(() => {
-        setIsDark(document.documentElement.classList.contains("dark"));
-    }, []);
-
-    const toggleTheme = () => {
-        const html = document.documentElement;
-        html.classList.add("transition-colors", "duration-200");
-        if (html.classList.contains("dark")) {
-            html.classList.remove("dark");
-            setIsDark(false);
-        } else {
-            html.classList.add("dark");
-            setIsDark(true);
-        }
-        setTimeout(() => {
-            html.classList.remove("transition-colors", "duration-200", "ease-In");
-        }, 200);
-    };
 
     const scrollToSection = (sectionId: string) => {
         const section = document.getElementById(sectionId);
@@ -69,7 +50,7 @@ export default function Navbar() {
         initial={{y: -20, filter: "blur(10px)"}}
         whileInView={{y:0, filter: "blur(0px)"}}
         transition={{duration: 0.4, ease: easeIn}}
-        className="flex  md:rounded-none rounded-r-full md:min-w-6xl flex-row fixed z-50 justify-between px-6  md:px-24 py-6 items-center backdrop-blur-xl top-0 bg-white/30 dark:bg-black/30">
+        className="flex  md:rounded-none rounded-r-full md:min-w-6xl flex-row fixed z-50 justify-between px-6 md:px-56 items-center backdrop-blur-xl top-0 bg-white/30 dark:bg-black/30">
             <a
             href="#hero"
             onClick={(e) => {
@@ -100,18 +81,9 @@ export default function Navbar() {
                 ))}
 
 
-                <button
-                    className="bg-stone-200 dark:bg-stone-800 rounded-full p-3 ml-4 flex items-center justify-center transition-colors duration-200"
-                    onClick={toggleTheme}
-                    aria-label="Toggle dark mode"
-                    type="button"
-                >
-                    {isDark ? (
-                        <Sun className="inline" size={20} color="#FAF9F6" />
-                    ) : (
-                        <Moon className="inline" size={20} color="#09090B" />
-                    )}
-                </button>
+                <div className="ml-4 flex items-center justify-center">
+                    <ModeToggle />
+                </div>
                 </div>
 
         </motion.div>
