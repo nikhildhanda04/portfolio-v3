@@ -220,6 +220,36 @@ export const projects: Project[] = [
       "Leveraged Next.js 16 and Tailwind v4 to implement bleeding-edge frontend standards.",
     ]
   },
+  {
+    slug: "gitme",
+    title: "GitMe",
+    tagline: "AI-Powered README Generator",
+    description: "A full-stack SaaS tool that analyzes GitHub repositories — structure, dependencies, and code — to automatically generate professional-quality README files using AI. Features secure authentication, a polished landing page, and a custom Gemini-powered generation pipeline.",
+    tech: mapTechs(["Nextjs", "TypeScript", "Reactjs", "Tailwind", "NodeJs", "PostgreSQL", "Prisma", "Gemini", "Zod"]),
+    link: "https://github.com/nikhildhanda04/gitme",
+    live: "https://gittme.vercel.app/",
+    image: "/gitme.jpeg",
+    isWorking: true,
+    timeline: "Apr 2025 - Present",
+    role: "Full Stack Developer",
+    team: "Solo",
+    features: [
+      { title: "AI README Generation", description: "Analyzes repository structure, dependencies, and code to produce comprehensive, formatted README files via Gemini AI." },
+      { title: "Repo-Aware Analysis", description: "Parses project directories, package.json, and source files to generate context-rich documentation automatically." },
+      { title: "Secure Authentication", description: "Implements user auth with Better Auth to protect generated content and personalize the experience." },
+      { title: "Customizable Output", description: "Allows users to tweak and refine AI-generated README content before exporting." },
+    ],
+    challenges: [
+      "Engineered a reliable AI generation pipeline to handle diverse repository structures and produce consistently formatted output.",
+      "Built a custom project-analysis layer that parses directory trees, dependencies, and file contents for accurate context injection.",
+      "Designed a polished, high-conversion landing page with benefits, FAQ, and CTA sections to showcase the product.",
+    ],
+    learnings: [
+      "Deepened expertise in Gemini API integration for structured content generation with schema enforcement.",
+      "Mastered Prisma ORM with PostgreSQL for managing user data and generated README history.",
+      "Applied modern landing page design patterns to create a compelling SaaS product experience.",
+    ],
+  },
 ];
 
 export function getProjectBySlug(slug: string): Project | undefined {

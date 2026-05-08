@@ -13,9 +13,22 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
+    company: "Freelancing",
+    role: "Full Stack Developer",
+    duration: "Dec 2024 – Present",
+    logo: "/freelance.svg",
+    points: [
+      "Delivered production-ready full-stack web solutions for 10+ clients, including high-conversion landing pages, interactive dashboards, and scalable e-commerce platforms with secure payment gateways.",
+      "Built and deployed scalable applications using React, Next.js, Node.js, PostgreSQL, and MongoDB with responsive UI, SEO optimization, and cross-browser compatibility.",
+      "Implemented authentication systems, RESTful APIs, database schemas, order management workflows, and third-party integrations following clean architecture and industry best practices.",
+      "Improved business outcomes by enabling online sales, lead generation, and workflow automation, increasing engagement, conversions, and operational efficiency.",
+      "Collaborated directly with non-technical stakeholders to gather requirements, translate business needs into technical solutions, and deliver projects on time with high client satisfaction.",
+    ],
+  },
+  {
     company: "Oscode",
     role: "Full Stack Web Intern",
-    duration: "Oct 2024 - May 2025",
+    duration: "Oct 2024 – May 2025",
     logo: "/oscode.svg",
     points: [
       "Designed and developed effective web solutions, delivering high-quality services to meet client requirements.",
@@ -38,8 +51,8 @@ const experiences: ExperienceItem[] = [
   {
     company: "News19",
     role: "Video Editor",
-    duration: "Jan 2025 - Mar 2025",
-    logo: "/news19.png", 
+    duration: "Jan 2025 – Mar 2025",
+    logo: "/news19.png",
     points: [
       "Crafting high-quality video content for news broadcasting and digital platforms.",
       "Utilizing professional editing software to enhance storytelling and visual appeal.",
