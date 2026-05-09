@@ -130,36 +130,37 @@ export const projects: Project[] = [
       "Implemented a hybrid polymorphic scraping engine switching between Cheerio and Puppeteer.",
     ],
   },
-  {
-    slug: "roadmap-generator",
-    title: "AI Roadmap Generator",
-    tagline: "Intelligent Learning Pathways",
-    description: "An intelligent, interactive learning platform that transforms abstract learning goals into structured, step-by-step visual pathways using AI. Features a custom DAG visualization engine and smart responsive layouts.",
-    tech: mapTechs(["Reactjs", "JavaScript", "Vite", "NodeJs", "Express", "Tailwind", "Motion", "ReactFlow", "Axios"]),
-    link: "https://github.com/nikhildhanda04/Roadmap-Generator",
-    live: "https://roadmapgenerator.vercel.app/",
-    image: "/Roadmap Gen.jpeg",
+    {
+    slug: "vitb-notes",
+    title: "VitB Notes",
+    tagline: "AI-Powered Study Companion",
+    description: "An advanced educational platform utilizing Gemini 2.0 Flash to transform raw syllabus materials into structured, textbook-quality notes and quizzes. Features a resilient AI pipeline and modern type-safe stack.",
+    tech: mapTechs(["Nextjs", "TypeScript", "NodeJs", "Reactjs", "Tailwind", "Motion", "PostgreSQL", "Prisma"]),
+    link: "https://github.com/nikhildhanda04/vitb-notes",
+    live: "https://www.vitbnotes.info/",
+    image: "/Vitb Notes.jpeg",
     isWorking: true,
-    timeline: "Aug 2024 - Nov 2024",
+    timeline: "Aug 2024 - Sep 2024",
     role: "Full Stack Developer",
     team: "Solo",
     features: [
-      {title: "AI-Driven Content Gen", description: "Dynamically generates comprehensive learning paths based on user input via backend AI service."},
-      {title: "Interactive DAG Visuals", description: "Visualizes learning paths as connected graphs with dependencies using a custom layout engine."},
-      {title: "Smart Responsive Layout", description: "Automatically adapts graph structure: columnar for desktop, vertical stack for mobile."},
-      {title: "Dynamic Prerequisite Map", description: "Visualizes non-linear dependencies between modules using dashed connection lines."},
-    ],
-    learnings: [
-      "Mastered React Flow to build a custom visualization engine for hierarchical data.",
-      "Implemented complex responsive logic to transform graph layouts based on device viewport.",
-      "Orchestrated smooth fluid animations using Framer Motion for asynchronous state changes.",
+      { title: "AI-Driven Content Gen", description: "Generates comprehensive markdown notes with LaTeX and Mermaid diagrams via Gemini 2.0 Flash." },
+      { title: "Resilient AI Pipeline", description: "Implements schema validation, JSON repair, and exponential backoff retry logic for reliability." },
+      { title: "Multi-Modal Parsing", description: "Ingests PDFs and images (OCR) to create structured study materials." },
+      { title: "Role-Based Generation", description: "Secure admin-only generation endpoints using Better Auth and session verification." },
     ],
     challenges: [
-      "Engineered a two-pass custom layout algorithm to map hierarchical JSON to flat node coordinates.",
-      "Solved complex mobile visualization challenges by switching layout strategies at runtime.",
-      "Integrated Framer Motion to create polished entrance animations during async AI generation.",
+      "Implemented a 'repair-and-retry' resiliency layer with jsonrepair to handle malformed LLM JSON outputs.",
+      "Built a custom exponential backoff strategy to manage API rate limits during bulk generation.",
+      "Enforced strict type-safety across the stack, ensuring AI output schemas mirror the Prisma database model.",
     ],
+    learnings: [
+      "Mastered prompt engineering to direct AI personas and enforce strict schema adherence.",
+      "Gained expertise in building robust, error-tolerant backend systems for long-running AI processes.",
+      "Leveraged Next.js 16 and Tailwind v4 to implement bleeding-edge frontend standards.",
+    ]
   },
+
   {
     slug: "law-journal",
     title: "Law Journal",
@@ -190,37 +191,8 @@ export const projects: Project[] = [
       "Implemented server-side caching with ISR to reduce Google API calls by over 95%.",
     ],
   },
-  {
-    slug: "vitb-notes",
-    title: "VitB Notes",
-    tagline: "AI-Powered Study Companion",
-    description: "An advanced educational platform utilizing Gemini 2.0 Flash to transform raw syllabus materials into structured, textbook-quality notes and quizzes. Features a resilient AI pipeline and modern type-safe stack.",
-    tech: mapTechs(["Nextjs", "TypeScript", "NodeJs", "Reactjs", "Tailwind", "Motion", "PostgreSQL", "Prisma"]),
-    link: "https://github.com/nikhildhanda04/vitb-notes",
-    live: "https://www.vitbnotes.info/",
-    image: "/Vitb Notes.jpeg",
-    isWorking: true,
-    timeline: "Aug 2024 - Sep 2024",
-    role: "Full Stack Developer",
-    team: "Solo",
-    features: [
-      { title: "AI-Driven Content Gen", description: "Generates comprehensive markdown notes with LaTeX and Mermaid diagrams via Gemini 2.0 Flash." },
-      { title: "Resilient AI Pipeline", description: "Implements schema validation, JSON repair, and exponential backoff retry logic for reliability." },
-      { title: "Multi-Modal Parsing", description: "Ingests PDFs and images (OCR) to create structured study materials." },
-      { title: "Role-Based Generation", description: "Secure admin-only generation endpoints using Better Auth and session verification." },
-    ],
-    challenges: [
-      "Implemented a 'repair-and-retry' resiliency layer with jsonrepair to handle malformed LLM JSON outputs.",
-      "Built a custom exponential backoff strategy to manage API rate limits during bulk generation.",
-      "Enforced strict type-safety across the stack, ensuring AI output schemas mirror the Prisma database model.",
-    ],
-    learnings: [
-      "Mastered prompt engineering to direct AI personas and enforce strict schema adherence.",
-      "Gained expertise in building robust, error-tolerant backend systems for long-running AI processes.",
-      "Leveraged Next.js 16 and Tailwind v4 to implement bleeding-edge frontend standards.",
-    ]
-  },
-  {
+
+ {
     slug: "gitme",
     title: "GitMe",
     tagline: "AI-Powered README Generator",
@@ -250,6 +222,40 @@ export const projects: Project[] = [
       "Applied modern landing page design patterns to create a compelling SaaS product experience.",
     ],
   },
+
+  
+  {
+    slug: "roadmap-generator",
+    title: "AI Roadmap Generator",
+    tagline: "Intelligent Learning Pathways",
+    description: "An intelligent, interactive learning platform that transforms abstract learning goals into structured, step-by-step visual pathways using AI. Features a custom DAG visualization engine and smart responsive layouts.",
+    tech: mapTechs(["Reactjs", "JavaScript", "Vite", "NodeJs", "Express", "Tailwind", "Motion", "ReactFlow", "Axios"]),
+    link: "https://github.com/nikhildhanda04/Roadmap-Generator",
+    live: "https://roadmapgenerator.vercel.app/",
+    image: "/Roadmap Gen.jpeg",
+    isWorking: true,
+    timeline: "Aug 2024 - Nov 2024",
+    role: "Full Stack Developer",
+    team: "Solo",
+    features: [
+      {title: "AI-Driven Content Gen", description: "Dynamically generates comprehensive learning paths based on user input via backend AI service."},
+      {title: "Interactive DAG Visuals", description: "Visualizes learning paths as connected graphs with dependencies using a custom layout engine."},
+      {title: "Smart Responsive Layout", description: "Automatically adapts graph structure: columnar for desktop, vertical stack for mobile."},
+      {title: "Dynamic Prerequisite Map", description: "Visualizes non-linear dependencies between modules using dashed connection lines."},
+    ],
+    learnings: [
+      "Mastered React Flow to build a custom visualization engine for hierarchical data.",
+      "Implemented complex responsive logic to transform graph layouts based on device viewport.",
+      "Orchestrated smooth fluid animations using Framer Motion for asynchronous state changes.",
+    ],
+    challenges: [
+      "Engineered a two-pass custom layout algorithm to map hierarchical JSON to flat node coordinates.",
+      "Solved complex mobile visualization challenges by switching layout strategies at runtime.",
+      "Integrated Framer Motion to create polished entrance animations during async AI generation.",
+    ],
+  },
+  
+ 
 ];
 
 export function getProjectBySlug(slug: string): Project | undefined {
