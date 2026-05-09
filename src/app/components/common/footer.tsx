@@ -3,6 +3,7 @@
 
 import { motion, easeIn } from 'framer-motion'
 import { useEffect, useState } from 'react'
+import ContactForm from '../landingpage/ContactForm'
 
 export default function Footer() {
     const [visitors, setVisitors] = useState<number | null>(null);
@@ -63,42 +64,13 @@ export default function Footer() {
 
                     <div className="flex items-center gap-2 mt-auto pt-4 font-secondary text-stone-500 text-xs uppercase tracking-widest opacity-60">
                         <span className="w-1.5 h-1.5 rounded-full bg-stone-400 animate-pulse" />
-                        Visitors #{visitors ? visitors.toLocaleString() : '923'} 
+                        Visitors #{visitors ? visitors.toLocaleString() : '129'} 
                     </div>
                 </div>
 
                 {/* Right side: Contact Form */}
                 <div className="flex-1 w-full">
-                    <form className="flex flex-col gap-4 font-secondary tracking-tighter" onSubmit={(e) => e.preventDefault()}>
-                        <div className="flex flex-col md:flex-row gap-4">
-                            <input 
-                                type="text" 
-                                placeholder="Full Name" 
-                                className="w-full bg-transparent border border-stone-300 dark:border-stone-800 rounded-md px-4 py-3 text-sm text-stone-800 dark:text-stone-200 focus:outline-none focus:border-stone-500 dark:focus:border-stone-500 transition-colors"
-                            />
-                            <input 
-                                type="tel" 
-                                placeholder="Phone No" 
-                                className="w-full bg-transparent border border-stone-300 dark:border-stone-800 rounded-md px-4 py-3 text-sm text-stone-800 dark:text-stone-200 focus:outline-none focus:border-stone-500 dark:focus:border-stone-500 transition-colors"
-                            />
-                        </div>
-                        <input 
-                            type="email" 
-                            placeholder="Email" 
-                            className="w-full bg-transparent border border-stone-300 dark:border-stone-800 rounded-md px-4 py-3 text-sm text-stone-800 dark:text-stone-200 focus:outline-none focus:border-stone-500 dark:focus:border-stone-500 transition-colors"
-                        />
-                        <textarea 
-                            placeholder="Message" 
-                            rows={4}
-                            className="w-full bg-transparent border border-stone-300 dark:border-stone-800 rounded-md px-4 py-3 text-sm text-stone-800 dark:text-stone-200 focus:outline-none focus:border-stone-500 dark:focus:border-stone-500 transition-colors resize-none"
-                        />
-                        <button 
-                            type="submit"
-                            className="w-full bg-stone-900 dark:bg-stone-100 text-stone-100 dark:text-stone-900 font-semibold rounded-md px-4 py-3 mt-2 hover:opacity-90 transition-opacity"
-                        >
-                            Submit
-                        </button>
-                    </form>
+                    <ContactForm rows={4} />
                 </div>
 
             </motion.div>

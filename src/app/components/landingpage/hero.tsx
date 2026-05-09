@@ -106,7 +106,7 @@ export default function Hero(){
             <motion.div 
                 initial={{opacity:0, y: 20}}
                 whileInView={{opacity:1, y:0}}
-                transition={{duration: 0.5, delay: 0.6}}
+                transition={{duration: 0.6}}
                 className="flex flex-col gap-4 mt-8"
             >
                 <h2 className="text-2xl font-bold font-primary text-stone-800 dark:text-stone-300 uppercase tracking-tight">About</h2>

@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import ContactForm from './ContactForm'
 
 const Contact = () => {
   return (
@@ -17,36 +18,7 @@ const Contact = () => {
 
       {/* Right side form */}
       <div className="flex-1 w-full">
-        <form className="flex flex-col gap-4 font-secondary tracking-tighter" onSubmit={(e) => e.preventDefault()}>
-          <div className="flex flex-col md:flex-row gap-4">
-            <input 
-              type="text" 
-              placeholder="Full Name" 
-              className="w-full bg-transparent border border-stone-300 dark:border-stone-800 rounded-md px-4 py-3 text-sm text-stone-800 dark:text-stone-200 focus:outline-none focus:border-stone-500 dark:focus:border-stone-500 transition-colors"
-            />
-            <input 
-              type="tel" 
-              placeholder="Phone No" 
-              className="w-full bg-transparent border border-stone-300 dark:border-stone-800 rounded-md px-4 py-3 text-sm text-stone-800 dark:text-stone-200 focus:outline-none focus:border-stone-500 dark:focus:border-stone-500 transition-colors"
-            />
-          </div>
-          <input 
-            type="email" 
-            placeholder="Email" 
-            className="w-full bg-transparent border border-stone-300 dark:border-stone-800 rounded-md px-4 py-3 text-sm text-stone-800 dark:text-stone-200 focus:outline-none focus:border-stone-500 dark:focus:border-stone-500 transition-colors"
-          />
-          <textarea 
-            placeholder="Message" 
-            rows={5}
-            className="w-full bg-transparent border border-stone-300 dark:border-stone-800 rounded-md px-4 py-3 text-sm text-stone-800 dark:text-stone-200 focus:outline-none focus:border-stone-500 dark:focus:border-stone-500 transition-colors resize-none"
-          />
-          <button 
-            type="submit"
-            className="w-full bg-stone-900 dark:bg-stone-100 text-stone-100 dark:text-stone-900 font-semibold rounded-md px-4 py-3 mt-2 hover:opacity-90 transition-opacity"
-          >
-            Submit
-          </button>
-        </form>
+        <ContactForm rows={5} />
       </div>
     </div>
   )
