@@ -130,7 +130,35 @@ export const projects: Project[] = [
       "Implemented a hybrid polymorphic scraping engine switching between Cheerio and Puppeteer.",
     ],
   },
-    {
+  {
+    slug: "repd",
+    title: "repD",
+    tagline: "AI-Powered Fitness & Workout Tracker via Telegram",
+    description: "A full-stack fitness tracking platform that integrates with Telegram to log workouts seamlessly. Uses a custom NLP parsing engine backed by Gemini AI to interpret natural language workout messages and visualizes progress on an interactive web dashboard.",
+    tech: mapTechs(["Reactjs", "Vite", "Tailwind", "Express", "PostgreSQL", "Gemini", "NodeJs"]),
+    link: "https://github.com/nikhildhanda04/repD",
+    live: "https://repd-rho.vercel.app/",
+    image: "/repd.jpeg",
+    isWorking: true,
+    timeline: "May 2026 - Present",
+    role: "Full Stack Developer",
+    team: "Solo",
+    features: [
+      {title: "Telegram Bot Integration", description: "Log workouts instantly through a Telegram bot using natural language (e.g., 'bench press 3x10 60kg')."},
+      {title: "Smart NLP Parser", description: "Accurately interprets various workout string formats and extracts exercise, sets, reps, and weight."},
+      {title: "AI-Powered Analysis", description: "Integrates Gemini API to analyze complex or malformed inputs for resilient workout tracking."},
+      {title: "Progress Visualization", description: "An interactive web dashboard built with React and Recharts to visualize workout progress over time."},
+    ],
+    learnings: [
+      "Integrated serverless databases (Neon) and modern ORMs (Drizzle) for efficient data modeling.",
+      "Built resilient webhook endpoints to handle asynchronous messages from Telegram reliably.",
+    ],
+    challenges: [
+      "Engineered a robust regex-based NLP parser with Gemini fallback to process unstructured natural language inputs from Telegram.",
+      "Managed state sync and secure authentication between the web dashboard and the Telegram webhook system.",
+    ],
+  },
+  {
     slug: "vitb-notes",
     title: "VitB Notes",
     tagline: "AI-Powered Study Companion",
