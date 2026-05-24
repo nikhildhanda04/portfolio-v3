@@ -9,9 +9,22 @@ interface ExperienceItem {
   duration: string;
   logo: string;
   points: string[];
+  isSecret?: boolean;
 }
 
 const experiences: ExperienceItem[] = [
+  {
+    company: "Will share soon",
+    role: "Full Stack Developer",
+    duration: "May 2026 - Present",
+    logo: "/newC.png",
+    points: [
+      "????",
+      "????"
+
+    ],
+    isSecret: true,
+  },
   {
     company: "Freelancing",
     role: "Full Stack Developer",
@@ -101,15 +114,15 @@ export default function Experience() {
                                             src={exp.logo}
                                             alt={exp.company}
                                             fill
-                                            className='object-cover border border-zinc-500 p-1 bg-neutral-100 rounded-full'
+                                            className={`object-cover border border-zinc-500 p-1 bg-neutral-100 rounded-full ${exp.isSecret ? 'blur-[4px] select-none pointer-events-none' : ''}`}
                                         />
                                     ) : (
-                                        <div className="w-full h-full border border-zinc-500 bg-neutral-100 rounded-full flex items-center justify-center text-[10px] font-bold text-stone-400">
+                                        <div className={`w-full h-full border border-zinc-500 bg-neutral-100 rounded-full flex items-center justify-center text-[10px] font-bold text-stone-400 ${exp.isSecret ? 'blur-[4px] select-none pointer-events-none' : ''}`}>
                                             {exp.company.charAt(0)}
                                         </div>
                                     )}
                                 </div>
-                                <div className="text-3xl font-medium text-zinc-800 dark:text-zinc-300">
+                                <div className={`text-3xl font-medium text-zinc-800 dark:text-zinc-300 ${exp.isSecret ? 'blur-md select-none pointer-events-none' : ''}`}>
                                     {exp.company}
                                 </div>
                             </div>
