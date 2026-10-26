@@ -14,16 +14,18 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
-    company: "Will share soon",
-    role: "Full Stack Developer",
-    duration: "May 2026 - Present",
+    company: "ForkLyft",
+    role: "Full Stack Developer (SDE)",
+    duration: "May 2026 – Present",
     logo: "/newC.png",
     points: [
-      "????",
-      "????"
-
+      "Built a retail shelf-audit platform for ITC using Node.js, Express 5, PostgreSQL, React 19, AWS Rekognition, and Amazon S3, delivering 26 REST endpoints across five database tables and passwordless phone-OTP authentication.",
+      "Engineered an asynchronous ML classification pipeline that batches shelf-audit scans and starts model inference on demand instead of running continuously, cutting inference-hour costs by roughly 90%.",
+      "Built a 3-surface retail POS ecosystem independently — a Windows Electron register, a 124-endpoint REST API, and a React back office — spanning approximately 165K LOC and 147 production releases on a 60+ table PostgreSQL/RDS schema.",
+      "Architected an offline-first transaction system using SQLite and an outbox-based synchronization layer, keeping checkout uninterrupted during network outages and syncing reliably once connectivity returns.",
+      "Integrated Datacap NETePay EMV for credit/debit, EBT Food and Cash, WIC, and batch closing, alongside Dejavoo SPIn payment terminals, Zebra MP7001 scales/scanners via a custom C#/.NET CoreScanner sidecar, Epson TM-T88V ESC/POS receipt printing, and Zebra ZPL label printing.",
+      "Delivered end-to-end POS capabilities including weighed-item, PLU, and variable-measure checkout, promotions, eight split-tender types, cash management, Z-reports, inventory, vendor management, and a finance ledger, alongside a 30-module back office, with automated Windows installer builds and auto-updates via electron-updater.",
     ],
-    isSecret: true,
   },
   {
     company: "Freelancing",
@@ -61,17 +63,17 @@ const experiences: ExperienceItem[] = [
       "Learned about how a corporate startup works.",
     ],
   },
-  {
-    company: "News19",
-    role: "Video Editor",
-    duration: "Jan 2025 – Mar 2025",
-    logo: "/news19.png",
-    points: [
-      "Crafting high-quality video content for news broadcasting and digital platforms.",
-      "Utilizing professional editing software to enhance storytelling and visual appeal.",
-      "Collaborating with production teams to meet tight deadlines and maintain editorial standards.",
-    ],
-  }
+  // {
+  //   company: "News19",
+  //   role: "Video Editor",
+  //   duration: "Jan 2025 – Mar 2025",
+  //   logo: "/news19.png",
+  //   points: [
+  //     "Crafting high-quality video content for news broadcasting and digital platforms.",
+  //     "Utilizing professional editing software to enhance storytelling and visual appeal.",
+  //     "Collaborating with production teams to meet tight deadlines and maintain editorial standards.",
+  //   ],
+  // }
 ];
 
 export default function Experience() {

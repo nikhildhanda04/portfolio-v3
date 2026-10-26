@@ -14,8 +14,16 @@ export function ModeToggle() {
     const newTheme = theme === "light" ? "dark" : "light"
     
     if (typeof document !== "undefined" && "startViewTransition" in document) {
-      ;(document as Document & { startViewTransition: (callback: () => void) => void }).startViewTransition(() => {
+      // the background canvas stops drawing while the reveal runs — two
+      // fullscreen GPU jobs at once is what made this stutter
+      document.documentElement.dataset.vt = "1"
+      const vt = (document as Document & {
+        startViewTransition: (cb: () => void) => { finished: Promise<void> }
+      }).startViewTransition(() => {
         setTheme(newTheme)
+      })
+      vt.finished.finally(() => {
+        delete document.documentElement.dataset.vt
       })
     } else {
       setTheme(newTheme)

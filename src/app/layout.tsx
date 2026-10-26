@@ -2,6 +2,7 @@
 
 import type { Metadata } from "next";
 import CursorFollower from "./components/common/cursor";
+import SmokeBackground from "./components/common/SmokeBackground";
 import { Instrument_Serif, Poltawski_Nowy, IBM_Plex_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react"
 import "./globals.css";
@@ -42,6 +43,7 @@ export default function RootLayout({
       <body
         className={`${imb_plex_mono.variable} ${poltawaski_noway.variable} ${instrument_serif.variable} font-primary antialiased bg-light dark:bg-dark text-stone-900 dark:text-stone-300 min-h-screen px-4 md:px-8 pb-4 md:pb-8 pt-0`}
       >
+        <SmokeBackground />
         <ThemeProvider
                   attribute="class"
                   defaultTheme="system"
