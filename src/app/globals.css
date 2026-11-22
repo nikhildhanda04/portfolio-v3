@@ -1,67 +1,117 @@
 @import "tailwindcss";
 
-
 @theme {
-  --color-light: #FAF9F6;
-  --color-dark: #09090B;
-  --font-logo: var(--font-poltawaski_noway), serif;
-  --font-primary: var(--font-instrument-serif), serif;
-  --font-secondary: var(--font-imb_plex_mono), monospace;
+  --font-serif: var(--font-instrument-serif), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* dark is the default; next-themes adds .light */
 :root {
-  --expo-out: cubic-bezier(0.19, 1, 0.22, 1);
+  --bg: #0f0e0e;
+  --fg: #f5f5f4;
+  --muted: #a1a1aa;
+  --soft: #63636b;
+  --line: rgba(255, 255, 255, 0.1);
+  --stripe: rgba(255, 255, 255, 0.055);
+  --hover: rgba(255, 255, 255, 0.05);
+  --card: #101010;
+  --chip: #161616;
+  --theme-x: 50vw;
+  --theme-y: 50vh;
 }
 
-html {
-  view-transition-name: root;
+.light {
+  --bg: #fcfcfb;
+  --fg: #18181b;
+  --muted: #52525b;
+  --soft: #a1a1aa;
+  --line: rgba(0, 0, 0, 0.1);
+  --stripe: rgba(0, 0, 0, 0.055);
+  --hover: rgba(0, 0, 0, 0.04);
+  --card: #ffffff;
+  --chip: #f4f4f5;
+}
+
+* {
+  border-color: var(--line);
   scrollbar-width: none;
-  -ms-overflow-style: none;
 }
 
-html::-webkit-scrollbar {
+*::-webkit-scrollbar {
   display: none;
 }
 
-::view-transition-group(root) {
-  animation-timing-function: var(--expo-out);
+html,
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+.text-glitch {
+  text-shadow:
+    -1.5px 0 0 rgba(0, 200, 255, 0.6),
+    1.5px 0 0 rgba(255, 80, 0, 0.6);
+}
+
+.bg-stripes {
+  background-image: repeating-linear-gradient(
+    315deg,
+    var(--stripe) 0,
+    var(--stripe) 1px,
+    transparent 1px,
+    transparent 7px
+  );
+}
+
+@keyframes scanline {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(100%); }
+}
+
+.animate-scanline {
+  animation: scanline 8s linear infinite;
+}
+
+.bottom-blur {
+  position: fixed;
+  inset: auto 0 0 0;
+  height: 130px;
+  z-index: 40;
+  pointer-events: none;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(5px);
+  mask-image: linear-gradient(to bottom, transparent, #000);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000);
+}
+
+/* theme switch: new theme grows as a circle from the toggle button */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
 }
 
 ::view-transition-new(root) {
-  animation: reveal 0.5s var(--expo-out) both;
+  clip-path: circle(0px at var(--theme-x) var(--theme-y));
+  animation: theme-reveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-::view-transition-old(root),
-.dark::view-transition-old(root) {
-  animation: none;
-  animation-fill-mode: both;
-  z-index: -1;
+@keyframes theme-reveal {
+  to { clip-path: circle(150vmax at var(--theme-x) var(--theme-y)); }
 }
 
-/* a clip-path circle the compositor can animate. the previous version scaled a
-   blurred SVG mask, which repainted the whole viewport every frame */
-@keyframes reveal {
-  from {
-    clip-path: circle(0% at 50% 50%);
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-new(root) {
+    animation: none;
+    clip-path: none;
   }
-  to {
-    clip-path: circle(140% at 50% 50%);
-  }
-}
-/* grainy backdrop */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size: 140px 140px;
-  opacity: 0.055;
-}
-
-.dark body::before {
-  opacity: 0.14;
 }

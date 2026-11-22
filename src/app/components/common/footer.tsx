@@ -1,98 +1,92 @@
-'use client'
+"use client";
 
+import { useEffect, useState } from "react";
+import { ArrowRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Shell, GapBand, SectionHeader } from "./Layout";
+import ContactForm from "../landingpage/ContactForm";
+import { site } from "@/app/data/site";
 
-import { motion, easeIn } from 'framer-motion'
-import { useEffect, useState } from 'react'
-import ContactForm from '../landingpage/ContactForm'
+export function Footer() {
+  const [time, setTime] = useState("");
+  const [quote, setQuote] = useState(0);
 
-export default function Footer() {
-    const [visitors, setVisitors] = useState<number | null>(null);
+  useEffect(() => {
+    const fmt = new Intl.DateTimeFormat("en-US", { timeZone: site.timezone, hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: true });
+    const tick = () => setTime(fmt.format(new Date()));
+    tick();
+    const clock = setInterval(tick, 1000);
+    const quotes = setInterval(() => setQuote((q) => (q + 1) % site.quotes.length), 6000);
+    return () => {
+      clearInterval(clock);
+      clearInterval(quotes);
+    };
+  }, []);
 
-    useEffect(() => {
-        const fetchVisitors = async () => {
-            try {
-                const hasCounted = sessionStorage.getItem('hasCounted');
-                // Using counterapi.dev as a reliable alternative to countapi.xyz
-                const endpoint = hasCounted 
-                    ? 'https://api.counterapi.dev/v1/projects/nikhildhanda-vercel-app/counters/visitors/' 
-                    : 'https://api.counterapi.dev/v1/projects/nikhildhanda-vercel-app/counters/visitors/up';
-                
-                const response = await fetch(endpoint);
-                const data = await response.json();
-                
-                if (data && data.count) {
-                    setVisitors(866 + data.count);
-                    if (!hasCounted) {
-                        sessionStorage.setItem('hasCounted', 'true');
-                    }
-                }
-            } catch (error) {
-                console.error('Failed to fetch visitor count:', error);
-            }
-        };
-
-        fetchVisitors();
-    }, []);
-
-    return(
-        <>
-        <div className="flex flex-col px-6 pt-12 mask-b-from-70%">
-
-            <motion.div 
-                initial={{y: -20, filter: "blur(10px)"}}
-                whileInView={{y:0, filter: "blur(0px)"}}
-                transition={{duration: 0.4, ease: easeIn}}
-                className="flex flex-col md:flex-row gap-12 md:gap-24 md:px-44"
-            >
-                {/* Left side: Reach Out Info */}
-                <div className="flex-1 flex flex-col gap-6">
-                    <h2 className="text-3xl md:text-4xl font-bold font-primary text-zinc-800 dark:text-zinc-200">
-                        Get in Touch
-                    </h2>
-                    <p className="font-secondary text-sm text-stone-600 dark:text-stone-400 leading-relaxed max-w-sm tracking-tighter">
-                        If you have any inquiries, please feel free to reach out. You can contact me via email or phone.
-                    </p>
-
-                    <div className="flex flex-col gap-3 mt-2">
-                        <div className="flex flex-row gap-5 font-secondary text-zinc-800 dark:text-zinc-300 text-sm md:text-base hover:underline hover:italic transition-all duration-200 ease-in items-center">
-                            <MailIcon /> nikhildhanda84@gmail.com
-                        </div>
-                        <div className="flex flex-row gap-5 font-secondary text-zinc-800 dark:text-zinc-300 text-sm md:text-base hover:underline hover:italic transition-all duration-200 ease-in items-center">
-                            <PhoneIcon /> +91 9215593793
-                        </div>
-                    </div>
-
-                    <div className="flex items-center gap-2 mt-auto pt-4 font-secondary text-stone-500 text-xs uppercase tracking-widest opacity-60">
-                        <span className="w-1.5 h-1.5 rounded-full bg-stone-400 animate-pulse" />
-                        Visitors #{visitors ? visitors.toLocaleString() : '129'} 
-                    </div>
-                </div>
-
-                {/* Right side: Contact Form */}
-                <div className="flex-1 w-full">
-                    <ContactForm rows={4} />
-                </div>
-
-            </motion.div>
-
-            <div className='font-[poltawaski] font-bold text-6xl md:text-8xl mt-16 md:mt-24 -mb-10 text-zinc-800 dark:text-zinc-300 tracking-wider relative text-center '>
-                NIKHIL DHANDA
-            </div>
-
+  return (
+    <footer className="w-full">
+      <GapBand h="h-12" />
+      <SectionHeader title="Scrolled Too Far" />
+      <Shell className="px-6 py-10 sm:px-8">
+        <div className="text-center">
+          <p className="text-[14px] text-[var(--muted)]">
+            If you&apos;ve read this far, you might be interested in collaborating or building something great.
+          </p>
+          <a
+            href={site.socials.email}
+            className="group mt-5 inline-flex items-center gap-2 rounded-lg bg-[var(--fg)] px-5 py-2.5 text-[13px] font-semibold text-[var(--bg)] transition-transform duration-200 hover:-translate-y-0.5"
+          >
+            Let&apos;s Talk
+            <ArrowRight className="size-3.5 transition-transform duration-200 group-hover:translate-x-1" />
+          </a>
         </div>
-        </>
-    )
+        <div className="mx-auto mt-10 max-w-xl">
+          <ContactForm rows={4} />
+        </div>
+      </Shell>
+
+      <GapBand className="border-t border-[var(--line)]" />
+      <div className="w-full border-y border-[var(--line)]">
+        <Shell className="flex min-h-[160px] flex-col items-center justify-center bg-[var(--bg)] px-8 py-12 text-center select-none">
+          <div className="flex min-h-[140px] w-full max-w-[580px] flex-col items-center justify-center overflow-hidden">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={quote}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+                className="flex flex-col items-center"
+              >
+                <span className="font-serif text-4xl leading-none text-[var(--soft)]">&ldquo;</span>
+                <p className="-mt-2 max-w-md font-serif text-[20px] leading-snug text-[var(--fg)] italic sm:text-[22px]">
+                  {site.quotes[quote].text}
+                </p>
+                <p className="mt-4 font-mono text-[10px] font-bold tracking-[0.3em] text-[var(--soft)] uppercase">
+                  — {site.quotes[quote].author}
+                </p>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </Shell>
+      </div>
+
+      <GapBand h="h-5" />
+      <div className="w-full border-t border-[var(--line)]">
+        <Shell className="px-6 py-8 pb-24 text-center sm:px-8">
+          <p className="text-[14.5px] text-[var(--muted)]">
+            Designed &amp; Developed by <span className="font-semibold text-[var(--fg)]">{site.name}</span>
+          </p>
+          <p className="mt-1.5 font-mono text-[12px] text-[var(--soft)]">© {new Date().getFullYear()} All rights reserved.</p>
+          <p className="mt-2.5 flex items-center justify-center gap-2 font-mono text-[12px] text-[var(--soft)]">
+            <span className="relative flex size-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
+              <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />
+            </span>
+            {site.location} · {time || "IST"}
+          </p>
+        </Shell>
+      </div>
+    </footer>
+  );
 }
-
-const MailIcon = () => (
-    <svg viewBox="0 0 24 24" className="w-5 h-5 fill-none stroke-current stroke-2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
-        <rect x="2" y="4" width="20" height="16" rx="2" />
-    </svg>
-)
-
-const PhoneIcon = () => (
-    <svg viewBox="0 0 24 24" className="w-5 h-5 fill-none stroke-current stroke-2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
-    </svg>
-)

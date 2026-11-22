@@ -1,27 +1,41 @@
-'use client'
+import { ArrowUpRight, FileText, Mail } from "lucide-react";
+import { Shell, SectionHeader } from "../common/Layout";
+import { GitHubIcon, LinkedInIcon, XIcon } from "../common/icons";
+import { site } from "@/app/data/site";
 
-import React from 'react'
-import ContactForm from './ContactForm'
+const LINKS = [
+  { label: "GitHub", href: site.socials.github, Icon: GitHubIcon },
+  { label: "LinkedIn", href: site.socials.linkedin, Icon: LinkedInIcon },
+  { label: "Twitter", href: site.socials.twitter, Icon: XIcon },
+  { label: "Mail", href: site.socials.email, Icon: Mail },
+  { label: "Resume", href: site.socials.resume, Icon: FileText },
+];
 
-const Contact = () => {
+export function Contact() {
   return (
-    <div id="contact" className="px-6 md:px-44 py-12 md:py-20 flex flex-col md:flex-row gap-12 md:gap-24">
-      {/* Left side */}
-      <div className="flex-1 flex flex-col gap-6">
-        <h2 className="text-3xl md:text-4xl font-bold font-primary text-stone-800 dark:text-stone-200">
-          Get in Touch
-        </h2>
-        <p className="font-secondary text-sm text-stone-600 dark:text-stone-400 leading-relaxed max-w-sm tracking-tighter">
-          If you have any inquiries, please feel free to reach out. You can contact me via email at <span className="font-semibold text-stone-800 dark:text-stone-200">nikhildhanda84@gmail.com</span>
-        </p>
-      </div>
-
-      {/* Right side form */}
-      <div className="flex-1 w-full">
-        <ContactForm rows={5} />
-      </div>
+    <div id="contact">
+      <SectionHeader title="Contact" />
+      <Shell>
+        <div className="grid grid-cols-2 border-b border-[var(--line)] sm:grid-cols-5 sm:border-b-0">
+          {LINKS.map(({ label, href, Icon }, idx) => (
+            <a
+              key={label}
+              href={href}
+              target={href.startsWith("mailto:") ? undefined : "_blank"}
+              rel="noopener noreferrer"
+              className={`group flex items-center justify-center gap-2.5 border-[var(--line)] px-4 py-4 text-[13px] font-medium transition-colors duration-200 hover:bg-[var(--hover)] ${
+                idx % 2 === 0 ? "border-r" : "border-r-0"
+              } ${idx < 4 ? "border-b" : ""} sm:border-b-0 ${idx === LINKS.length - 1 ? "sm:border-r-0" : "sm:border-r"}`}
+            >
+              <span className="grid size-9 place-items-center rounded-lg border border-[var(--line)] bg-[var(--chip)] text-[var(--fg)]">
+                <Icon className="size-4" />
+              </span>
+              <span className="text-[var(--muted)] transition-colors group-hover:text-[var(--fg)]">{label}</span>
+              <ArrowUpRight className="size-3.5 text-[var(--soft)] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-[var(--fg)]" />
+            </a>
+          ))}
+        </div>
+      </Shell>
     </div>
-  )
+  );
 }
-
-export default Contact

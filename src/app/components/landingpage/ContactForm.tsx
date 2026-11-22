@@ -56,11 +56,11 @@ export default function ContactForm({ rows = 5 }: ContactFormProps) {
   }
 
   const inputClasses =
-    'w-full bg-transparent border border-stone-300 dark:border-stone-800 rounded-md px-4 py-3 text-sm text-stone-800 dark:text-stone-200 focus:outline-none focus:border-stone-500 dark:focus:border-stone-500 transition-colors placeholder:text-stone-400 dark:placeholder:text-stone-600'
+    'w-full rounded-lg border border-[var(--line)] bg-[var(--chip)] px-4 py-2.5 text-[13px] text-[var(--fg)] outline-none transition-colors placeholder:text-[var(--soft)] focus:border-[var(--soft)]'
 
   return (
-    <form className="flex flex-col gap-4 font-secondary tracking-tighter" onSubmit={handleSubmit}>
-      <div className="flex flex-col md:flex-row gap-4">
+    <form className="flex flex-col gap-3 text-left" onSubmit={handleSubmit}>
+      <div className="flex flex-col md:flex-row gap-3">
         <input
           type="text"
           name="name"
@@ -102,12 +102,12 @@ export default function ContactForm({ rows = 5 }: ContactFormProps) {
         type="submit"
         disabled={status === 'loading'}
         className={`
-          w-full font-semibold rounded-md px-4 py-3 mt-2 transition-all duration-300 flex items-center justify-center gap-2
+          w-full text-[13px] font-semibold rounded-lg px-4 py-2.5 mt-1 transition-all duration-300 flex items-center justify-center gap-2
           ${status === 'success'
             ? 'bg-emerald-600 text-white'
             : status === 'error'
               ? 'bg-red-600 text-white'
-              : 'bg-stone-900 dark:bg-stone-100 text-stone-100 dark:text-stone-900 hover:opacity-90'
+              : 'border border-[var(--line)] bg-[var(--chip)] text-[var(--fg)] hover:bg-[var(--hover)]'
           }
           ${status === 'loading' ? 'opacity-70 cursor-not-allowed' : ''}
         `}

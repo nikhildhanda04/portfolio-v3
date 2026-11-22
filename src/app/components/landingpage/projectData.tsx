@@ -36,6 +36,7 @@ export interface Project {
   image: string;
   tagline: string;
   isWorking?: boolean;
+  categories: ("Frontend" | "Backend" | "Fullstack")[];
   timeline?: string;
   role?: string;
   team?: string;
@@ -101,6 +102,7 @@ const mapTechs = (techs: string[]) => {
 export const projects: Project[] = [
   {
     slug: "next-hire",
+    categories: ["Fullstack", "Backend"],
     title: "Next Hire",
     tagline: "AI based job finding platform",
     description: "A full-stack AI platform and Extension to automate resume parsing and job application autofill, reducing application time by 40%. Features a fault-tolerant RAG pipeline and hybrid scraping engine.",
@@ -132,6 +134,7 @@ export const projects: Project[] = [
   },
   {
     slug: "repd",
+    categories: ["Fullstack", "Backend"],
     title: "repD",
     tagline: "AI-Powered Fitness & Workout Tracker via Telegram",
     description: "A full-stack fitness tracking platform that integrates with Telegram to log workouts seamlessly. Uses a custom NLP parsing engine backed by Gemini AI to interpret natural language workout messages and visualizes progress on an interactive web dashboard.",
@@ -160,6 +163,7 @@ export const projects: Project[] = [
   },
   {
     slug: "vitb-notes",
+    categories: ["Fullstack"],
     title: "VitB Notes",
     tagline: "AI-Powered Study Companion",
     description: "An advanced educational platform utilizing Gemini 2.0 Flash to transform raw syllabus materials into structured, textbook-quality notes and quizzes. Features a resilient AI pipeline and modern type-safe stack.",
@@ -191,6 +195,7 @@ export const projects: Project[] = [
 
   {
     slug: "law-journal",
+    categories: ["Frontend"],
     title: "Law Journal",
     tagline: "A blog website for law students",
     description: "A highly optimized Next.js blog that eliminates CMS costs by engineering a custom adapter for Google Sheets and Drive, featuring ISR for static performance and dynamic content updates.",
@@ -222,6 +227,7 @@ export const projects: Project[] = [
 
  {
     slug: "gitme",
+    categories: ["Fullstack"],
     title: "GitMe",
     tagline: "AI-Powered README Generator",
     description: "A full-stack SaaS tool that analyzes GitHub repositories — structure, dependencies, and code — to automatically generate professional-quality README files using AI. Features secure authentication, a polished landing page, and a custom Gemini-powered generation pipeline.",
@@ -254,6 +260,7 @@ export const projects: Project[] = [
   
   {
     slug: "roadmap-generator",
+    categories: ["Frontend", "Fullstack"],
     title: "AI Roadmap Generator",
     tagline: "Intelligent Learning Pathways",
     description: "An intelligent, interactive learning platform that transforms abstract learning goals into structured, step-by-step visual pathways using AI. Features a custom DAG visualization engine and smart responsive layouts.",
