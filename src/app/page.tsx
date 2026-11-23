@@ -12,9 +12,11 @@ import { Projects } from "./components/landingpage/projects";
 import { Experience } from "./components/landingpage/experience";
 import { TechStack } from "./components/landingpage/techstack";
 import { GithubActivity } from "./components/landingpage/github";
+import { PortfolioPreloader } from "./components/common/Preloader";
 
 export default function Home() {
   const [paletteOpen, setPaletteOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
   const openPalette = () => setPaletteOpen(true);
 
   useEffect(() => {
@@ -30,6 +32,9 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen bg-[var(--bg)] text-[var(--fg)]">
+      {loading && (
+        <PortfolioPreloader accentColor="var(--fg)" backgroundColor="var(--bg)" onDone={() => setLoading(false)} />
+      )}
       <Nav onOpenPalette={openPalette} />
       <SideIndex />
       <main className="relative z-10">
